@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { key: 'threshold', value: 18200, prefix: '$', suffix: '', label: 'You usually pay no tax on the first $18,200 you earn each year' },
-  { key: 'dasp', value: 65, prefix: '', suffix: '%', label: 'of your super comes back to you when you leave. Students pay 35% tax on it, not the 65% backpacker rate' },
+  { key: 'dasp', value: 65, prefix: '', suffix: '%', label: 'You get 65% of your super back when you leave Australia' },
   { key: 'hours', value: 48, prefix: '', suffix: ' hrs', label: 'You can work 48 hours a fortnight while your course is running' },
 ]
 
@@ -74,38 +74,37 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative bg-navy-800 text-white">
         <HeroDecor />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-3 sm:py-4">
+          <div className="grid items-center gap-4 lg:grid-cols-[1.2fr_1fr]">
             <div>
-              <p className="hero-in-1 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-gold-400">
+              <p className="hero-in-1 text-xs font-bold uppercase tracking-[0.14em] text-gold-400">
                 For international students in Australia
               </p>
-              <h1 className="hero-in-2 mt-4 font-heading font-extrabold leading-[1.12] tracking-tight text-[clamp(1.9rem,5vw,3.4rem)]">
-                Earn up to <span className="text-gold-400">$18,200 tax free.</span>{' '}
+              <h1 className="hero-in-2 mt-1 font-heading font-extrabold leading-[1.12] tracking-tight text-[clamp(1.3rem,3vw,1.8rem)]">
+                Earn up to <span className="text-gold-400">$18,200 tax free.</span>
+                <br />
                 Most international students qualify.
               </h1>
-              <p className="hero-in-3 mt-5 max-w-xl text-base sm:text-lg text-navy-200">
-                Studying in Australia for more than 6 months usually makes you a
-                resident for tax purposes. That means the first $18,200 you earn
-                each year is tax free, and many students get a refund at tax time.
+              <p className="hero-in-3 mt-2 max-w-xl text-sm text-navy-200">
+                Get your tax refund estimate within 3 hours.
               </p>
-              <div className="hero-in-4 mt-8 flex flex-col sm:flex-row gap-3">
+              <div className="hero-in-4 mt-4 flex flex-col sm:flex-row gap-2">
                 <a
                   href={waLink('I want to check my tax refund.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pop rounded-lg bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500 text-center"
+                  className="btn-pop rounded-2xl bg-gold-400 px-5 py-2.5 font-bold text-sm text-navy-900 hover:bg-gold-500 text-center"
                 >
                   Check my refund on WhatsApp
                 </a>
                 <Link
                   href="/calculator"
-                  className="btn-pop rounded-lg border-2 border-white/25 px-6 py-3.5 font-bold text-white hover:bg-navy-700 text-center"
+                  className="btn-pop rounded-2xl border-2 border-white/25 px-5 py-2.5 font-bold text-sm text-white hover:bg-navy-700 text-center"
                 >
                   Try the calculator
                 </Link>
               </div>
-              <p className="mt-6 text-sm text-navy-200">
+              <p className="mt-3 text-xs text-navy-200">
                 {AGENT_LINE} (TPB {TPB}).
               </p>
             </div>
@@ -143,10 +142,7 @@ export default function HomePage() {
               Who is behind CampusTax
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-ink-secondary">
-              A tax help service built only for international students, with every
-              return checked and lodged through a registered tax agent. Do not take
-              our word for it. Both registrations below are public, check them
-              yourself.
+              Built by former international students, for international students. Simple advice, clear answers, and every return checked and lodged by a registered tax agent.
             </p>
           </div>
           <div className="mt-8">
@@ -226,7 +222,7 @@ export default function HomePage() {
               href={waLink('I have a question.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-pop inline-block rounded-lg bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
+              className="btn-pop inline-block rounded-2xl bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
             >
               Ask a free question on WhatsApp
             </a>
@@ -304,7 +300,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/guides"
-                className="btn-pop rounded-lg border-2 border-navy-600 px-5 py-2.5 text-sm font-bold text-navy-600 hover:bg-navy-50"
+                className="btn-pop rounded-2xl border-2 border-navy-600 px-5 py-2.5 text-sm font-bold text-navy-600 hover:bg-navy-50"
               >
                 Browse the guides
               </Link>
@@ -346,7 +342,7 @@ export default function HomePage() {
                 href={waLink('I have a question.')}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pop inline-block rounded-lg bg-gold-400 px-7 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
+                className="btn-pop inline-block rounded-2xl bg-gold-400 px-7 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
               >
                 Ask a free question on WhatsApp
               </a>
