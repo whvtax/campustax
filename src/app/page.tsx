@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 const stats = [
   { key: 'threshold', value: 18200, prefix: '$', suffix: '', label: 'You usually pay no tax on the first $18,200 you earn each year' },
-  { key: 'dasp', value: 65, prefix: '', suffix: '%', label: 'of your super comes back to you when you leave. Students pay 35% tax on it, not the 65% backpacker rate' },
+  { key: 'dasp', value: 65, prefix: '', suffix: '%', label: 'You get 65% of your super back when you leave Australia' },
   { key: 'hours', value: 48, prefix: '', suffix: ' hrs', label: 'You can work 48 hours a fortnight while your course is running' },
 ]
 
@@ -74,21 +74,21 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative bg-navy-800 text-white">
         <HeroDecor />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-4 sm:py-6">
+          <div className="grid items-center gap-6 lg:grid-cols-[1.2fr_1fr]">
             <div>
               <p className="hero-in-1 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-gold-400">
                 For international students in Australia
               </p>
-              <h1 className="hero-in-2 mt-4 font-heading font-extrabold leading-[1.12] tracking-tight text-[clamp(1.7rem,4vw,2.2rem)]">
+              <h1 className="hero-in-2 mt-2 font-heading font-extrabold leading-[1.12] tracking-tight text-[clamp(1.5rem,3.5vw,2rem)]">
                 Earn up to <span className="text-gold-400">$18,200 tax free.</span>
                 <br />
                 Most international students qualify.
               </h1>
-              <p className="hero-in-3 mt-5 max-w-xl text-base sm:text-lg text-navy-200">
+              <p className="hero-in-3 mt-3 max-w-xl text-base sm:text-lg text-navy-200">
                 Get your tax refund estimate within 3 hours.
               </p>
-              <div className="hero-in-4 mt-8 flex flex-col sm:flex-row gap-3">
+              <div className="hero-in-4 mt-6 flex flex-col sm:flex-row gap-3">
                 <a
                   href={waLink('I want to check my tax refund.')}
                   target="_blank"
