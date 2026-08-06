@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Faq from '@/components/Faq'
 import Reveal from '@/components/Reveal'
 import HeroDecor from '@/components/HeroDecor'
@@ -8,7 +9,7 @@ import { IconReturn, IconSuper, IconTfn, IconAbn } from '@/components/icons'
 import StatNumber from '@/components/StatNumber'
 import TrustStrip from '@/components/TrustStrip'
 import CalcWidget from '@/components/CalcWidget'
-import { waLink, TAX_YEAR } from '@/lib/constants'
+import { waLink } from '@/lib/constants'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -94,7 +95,7 @@ export default function HomePage() {
               </div>
               <div className="mt-6 flex justify-center">
                 <div className="inline-block">
-                  <TrustStrip align="center" />
+                  <TrustStrip align="center" iconsOnly={true} />
                 </div>
               </div>
             </div>
@@ -135,6 +136,15 @@ export default function HomePage() {
               Built by former international students, for international students. Simple advice, clear answers, and every return checked and lodged by a registered tax agent.
             </p>
           </div>
+          <div className="mt-8 rounded-2xl overflow-hidden shadow-lg">
+            <Image
+              src="/team.jpg"
+              alt="CampusTax Team"
+              width={800}
+              height={500}
+              className="w-full h-auto object-cover"
+            />
+          </div>
           <div className="mt-8">
             <TrustStrip />
           </div>
@@ -152,7 +162,7 @@ export default function HomePage() {
           </p>
         </Reveal>
 
-        {/* Calculator - Featured */}
+        {/* Calculator - Featured in Phone Mock */}
         <div className="mt-12 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-900 p-8 sm:p-12 border border-gold-400/20">
           <Reveal>
             <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
@@ -162,8 +172,23 @@ export default function HomePage() {
               Two numbers in, estimate out. No email, no signup, nothing saved.
             </p>
           </Reveal>
-          <div className="mt-8">
-            <CalcWidget />
+          <div className="mt-8 flex justify-center">
+            <div className="w-full max-w-sm rounded-3xl border-[8px] border-navy-900 bg-white shadow-2xl overflow-hidden">
+              {/* Phone Header */}
+              <div className="flex items-center gap-2 bg-navy-800 px-4 py-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-400 font-heading text-xs font-extrabold text-navy-900">
+                  CT
+                </div>
+                <div className="leading-tight flex-1">
+                  <p className="text-sm font-bold text-white">CampusTax</p>
+                  <p className="text-[11px] text-navy-200">Calculator</p>
+                </div>
+              </div>
+              {/* Calculator Content */}
+              <div className="p-4 sm:p-6 bg-white min-h-[400px] overflow-y-auto">
+                <CalcWidget />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -253,7 +278,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Reassurance */}
+      {/* Reassurance - Before Contact */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <Reveal>
           <div className="rounded-2xl bg-gold-50 border border-gold-200 p-8 sm:p-10">
@@ -263,7 +288,7 @@ export default function HomePage() {
             <p className="mt-3 max-w-2xl text-sm sm:text-base text-ink-secondary">
               First payslip, first tax file number, first tax return. We explain
               everything in plain English, answer on WhatsApp in hours, and every
-              return for the {TAX_YEAR} year is checked and lodged through a
+              return for the 2025-26 year is checked and lodged through a
               registered tax agent. No tax words you need a dictionary for.
             </p>
           </div>

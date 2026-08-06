@@ -5,12 +5,12 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { waLink } from '@/lib/constants'
 
-// Slim top nav: the four core destinations only. Calculator, About, Contact,
-// TFN and ABN live as sections on the home page and as standalone URLs
-// reachable from there and from the footer.
+// Main navigation menu
 const links = [
+  { href: '/tfn', label: 'TFN' },
+  { href: '/abn', label: 'ABN' },
   { href: '/tax-return', label: 'Tax Return' },
-  { href: '/superannuation', label: 'Super Refund' },
+  { href: '/superannuation', label: 'Super' },
   { href: '/medicare', label: 'Medicare' },
   { href: '/guides', label: 'Guides' },
 ]
