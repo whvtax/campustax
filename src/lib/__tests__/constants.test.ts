@@ -36,7 +36,7 @@ describe('Constants', () => {
   describe('Legal information', () => {
     it('should not claim to be registered directly', () => {
       expect(AGENT_LINE).not.toContain('we are registered')
-      expect(AGENT_LINE).toBe('lodged through a registered tax agent')
+      expect(AGENT_LINE).toBe('Lodged through a registered tax agent')
     })
 
     it('should have LEGAL_ENTITY defined', () => {

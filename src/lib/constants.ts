@@ -8,7 +8,7 @@ export const TAGLINE = 'Helping international students get their tax right'
  * Always the indirect form: "lodged through a registered tax agent".
  */
 export const AGENT_LINE =
-  'lodged through a registered tax agent'
+  'Lodged through a registered tax agent'
 export const LEGAL_ENTITY = 'The Accounting Academy Pty Ltd'
 export const ABN = '26 669 927 959'
 export const TPB = '26233096'

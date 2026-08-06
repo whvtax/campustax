@@ -40,7 +40,6 @@ export default function Footer() {
             <li><Link href="/medicare" className="inline-block py-1 hover:text-gold-400">Medicare Levy Exemption</Link></li>
             <li><Link href="/tfn" className="inline-block py-1 hover:text-gold-400">TFN</Link></li>
             <li><Link href="/abn" className="inline-block py-1 hover:text-gold-400">ABN</Link></li>
-            <li><Link href="/calculator" className="inline-block py-1 hover:text-gold-400">Tax Calculator</Link></li>
           </ul>
         </div>
 
@@ -48,7 +47,6 @@ export default function Footer() {
           <h2 className="text-sm font-bold uppercase tracking-wider text-gold-400">CampusTax</h2>
           <ul className="mt-3 space-y-2 text-sm">
             <li><Link href="/guides" className="inline-block py-1 hover:text-gold-400">Student Tax Guides</Link></li>
-            <li><Link href="/about" className="inline-block py-1 hover:text-gold-400">About</Link></li>
             <li><Link href="/contact" className="inline-block py-1 hover:text-gold-400">Contact</Link></li>
             <li><Link href="/client-agreement" className="inline-block py-1 hover:text-gold-400">Client Agreement</Link></li>
             <li><Link href="/privacy" className="inline-block py-1 hover:text-gold-400">Privacy Policy</Link></li>

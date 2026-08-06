@@ -4,11 +4,11 @@ import Faq from '@/components/Faq'
 import Reveal from '@/components/Reveal'
 import HeroDecor from '@/components/HeroDecor'
 import WhatsAppMock from '@/components/WhatsAppMock'
-import { IconReturn, IconSuper, IconTfn, IconAbn, IconMedicare, IconCalc } from '@/components/icons'
+import { IconReturn, IconSuper, IconTfn, IconAbn } from '@/components/icons'
 import StatNumber from '@/components/StatNumber'
 import TrustStrip from '@/components/TrustStrip'
 import CalcWidget from '@/components/CalcWidget'
-import { waLink, AGENT_LINE, TPB, TAX_YEAR } from '@/lib/constants'
+import { waLink, TAX_YEAR } from '@/lib/constants'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -48,18 +48,6 @@ const services = [
     text: 'Uber Eats and DoorDash pay you as a contractor. Set up your free ABN right and know what to put aside, so tax time brings no shock bill.',
     icon: <IconAbn />,
   },
-  {
-    href: '/medicare',
-    title: 'Medicare Levy Exemption',
-    text: 'Your OSHC usually means you should not pay the 2% Medicare levy. Most students never claim this.',
-    icon: <IconMedicare />,
-  },
-  {
-    href: '/calculator',
-    title: 'Tax Calculator',
-    text: 'Two minutes, two numbers, and you see your estimated refund or super payout before you talk to anyone.',
-    icon: <IconCalc />,
-  },
 ]
 
 const steps = [
@@ -98,15 +86,17 @@ export default function HomePage() {
                   Check my refund on WhatsApp
                 </a>
                 <Link
-                  href="/calculator"
+                  href="/#calculator"
                   className="btn-pop rounded-2xl border-2 border-white/25 px-5 py-2.5 font-bold text-sm text-white hover:bg-navy-700 text-center"
                 >
                   Try the calculator
                 </Link>
               </div>
-              <p className="mt-3 text-xs text-navy-200">
-                {AGENT_LINE} (TPB {TPB}).
-              </p>
+              <div className="mt-6 flex justify-center">
+                <div className="inline-block">
+                  <TrustStrip align="center" />
+                </div>
+              </div>
             </div>
             {/* 99.9% of visitors are on mobile, so the chat mock shows there too */}
             <Reveal delay={150}>
@@ -148,11 +138,6 @@ export default function HomePage() {
           <div className="mt-8">
             <TrustStrip />
           </div>
-          <p className="mt-6 text-center text-sm">
-            <Link href="/about" className="font-bold text-navy-600 hover:underline">
-              More about who we are
-            </Link>
-          </p>
         </Reveal>
       </section>
 
@@ -160,16 +145,28 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <Reveal>
           <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800 max-w-2xl">
-            Student tax is not backpacker tax. The rules are on your side.
+            Student tax works in your favour.
           </h2>
           <p className="mt-4 max-w-2xl text-ink-secondary">
-            Working holiday makers pay 15% tax from their very first dollar. As a student
-            on a course longer than 6 months, you are usually a resident for tax purposes,
-            so you pay nothing until you earn more than $18,200 in a tax year. If
-            tax was taken out of your pay and you earned less than that, the
-            money is normally yours to claim back.
+            If you&apos;re studying a course longer than 6 months, you&apos;re usually considered a resident for tax purposes. This means you generally don&apos;t pay tax until you earn more than $18,200 in a financial year. If tax has already been taken from your pay and you earned less than that, you can usually claim it back.
           </p>
         </Reveal>
+
+        {/* Calculator - Featured */}
+        <div className="mt-12 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-900 p-8 sm:p-12 border border-gold-400/20">
+          <Reveal>
+            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
+              Check your numbers right now
+            </h3>
+            <p className="mt-3 text-base text-navy-100">
+              Two numbers in, estimate out. No email, no signup, nothing saved.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <CalcWidget />
+          </div>
+        </div>
+
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {services.map((s, i) => (
             <Reveal key={s.href} delay={i * 80}>
@@ -230,59 +227,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Calculator, right here on the page */}
-      <section id="calculator" className="bg-navy-50">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16">
-          <Reveal>
-            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
-              Check your numbers right now
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-ink-secondary">
-              Two numbers in, estimate out. No email, no signup, nothing saved.
-            </p>
-          </Reveal>
-          <div className="mt-8">
-            <CalcWidget />
-          </div>
-        </div>
-      </section>
-
-      {/* TFN and ABN, the short version */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-        <Reveal>
-          <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800 max-w-2xl">
-            Starting work this week? Two numbers first.
-          </h2>
-        </Reveal>
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          <Reveal>
-            <div className="card-lift h-full rounded-xl border border-navy-100 p-6">
-              <h3 className="font-heading text-lg font-extrabold text-navy-800">TFN, for any job with a payslip</h3>
-              <p className="mt-2 text-sm text-ink-secondary">
-                Free from the ATO, ten minutes online after you land, arrives by
-                post within 28 days. Without it your employer must hold back nearly
-                half your pay. Apply in your first week, before you need it.
-              </p>
-              <p className="mt-3 text-sm font-bold text-navy-600">
-                <Link href="/tfn" className="hover:underline">How to get your TFN →</Link>
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={90}>
-            <div className="card-lift h-full rounded-xl border border-navy-100 p-6">
-              <h3 className="font-heading text-lg font-extrabold text-navy-800">ABN, for delivery and freelance</h3>
-              <p className="mt-2 text-sm text-ink-secondary">
-                Uber Eats and DoorDash pay you as a contractor, so you need a free
-                ABN. Nobody takes tax out of that pay, so put around 20 cents per
-                dollar aside and the bill at tax time never surprises you.
-              </p>
-              <p className="mt-3 text-sm font-bold text-navy-600">
-                <Link href="/abn" className="hover:underline">Set up your ABN right →</Link>
-              </p>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* Guides teaser */}
       <section className="bg-cream">

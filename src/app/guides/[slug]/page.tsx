@@ -103,9 +103,11 @@ export default function GuidePage({ params }: { params: { slug: string } }) {
 
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <WaCta context={g.waContext} label="Ask us on WhatsApp" />
-          <Link href={g.serviceLink.href} className="text-sm font-bold text-navy-600 hover:underline">
-            {g.serviceLink.label}
-          </Link>
+          {g.serviceLink && (
+            <Link href={g.serviceLink.href} className="text-sm font-bold text-navy-600 hover:underline">
+              {g.serviceLink.label}
+            </Link>
+          )}
         </div>
 
         {related.length > 0 && (

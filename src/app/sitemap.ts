@@ -9,9 +9,7 @@ const routes: Array<{ path: string; priority: number; changeFrequency: 'monthly'
   { path: '/tfn', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/abn', priority: 0.9, changeFrequency: 'monthly' },
   { path: '/medicare', priority: 0.9, changeFrequency: 'monthly' },
-  { path: '/calculator', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/guides', priority: 0.8, changeFrequency: 'monthly' },
-  { path: '/about', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/contact', priority: 0.5, changeFrequency: 'monthly' },
 ]
 

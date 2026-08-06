@@ -99,8 +99,8 @@ export default function SuperPage() {
             Your final tax return
           </Link>{' '}
           and your super claim belong together. Try the{' '}
-          <Link href="/calculator" className="font-bold text-navy-600 hover:underline">
-            calculator
+          <Link href="/#calculator" className="font-bold text-navy-600 hover:underline">
+            calculator on the home page
           </Link>{' '}
           to see your estimated payout.
         </p>

@@ -1,7 +1,5 @@
 import type { Guide } from '../types'
-
 const UPDATED = '21 July 2026'
-
 export const batch5Guides: Guide[] = [
   {
     slug: 'is-oshc-tax-deductible',
@@ -56,7 +54,6 @@ export const batch5Guides: Guide[] = [
     serviceLink: { href: '/medicare', label: 'Our Medicare exemption service' },
     waContext: 'I have a question about OSHC and tax.',
   },
-
   {
     slug: 'can-i-claim-tuition-fees',
     title: 'Can I claim my tuition fees on tax as an international student?',
@@ -110,7 +107,6 @@ export const batch5Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about claiming study costs.',
   },
-
   {
     slug: 'tax-on-money-from-parents',
     title: 'Do I pay tax on money my parents send me?',
@@ -164,7 +160,6 @@ export const batch5Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about money my family sends me.',
   },
-
   {
     slug: 'tax-on-bank-interest-students',
     title: 'Do I pay tax on my Australian bank interest?',
@@ -218,7 +213,6 @@ export const batch5Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about tax on my bank interest.',
   },
-
   {
     slug: 'moved-to-485-visa-tax',
     title: 'I moved to a 485 visa. What changes with my tax?',
@@ -272,7 +266,6 @@ export const batch5Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I moved to a 485 visa and have a tax question.',
   },
-
   {
     slug: 'leaving-australia-early-tax-return',
     title: 'I am leaving Australia. Can I get my tax back early?',
