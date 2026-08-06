@@ -18,8 +18,8 @@ export default function TrustStrip({ align = 'center' }: { align?: 'center' | 's
       >
         <Image src="/assets/tpb-logo.svg" alt="Tax Practitioners Board registered tax agent symbol" width={54} height={67} />
         <span className="text-left text-xs font-semibold leading-snug text-ink-secondary">
-          תחת השגחת סוכן מס רשום<br />
-          <span className="text-navy-600 underline">בדוק את הרישום {TPB}</span>
+          Under supervision of a<br />
+          <span className="text-navy-600 underline">registered tax agent {TPB}</span>
         </span>
       </a>
       <div className="flex items-center gap-3">
@@ -34,8 +34,8 @@ export default function TrustStrip({ align = 'center' }: { align?: 'center' | 's
           🔒
         </span>
         <span className="text-left text-xs font-semibold leading-snug text-ink-secondary">
-          כל הנתונים שלך<br />
-          מאובטחים לגמרי
+          Bank-level data<br />
+          security
         </span>
       </div>
     </div>

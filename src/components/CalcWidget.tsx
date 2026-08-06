@@ -177,7 +177,7 @@ export default function CalcWidget() {
 
       <p className="mt-10 text-xs text-ink-muted">
         These are estimates only and are not tax advice. Your final result depends on
-        your full situation. {AGENT_LINE} (TPB {TPB}).
+        your full situation.
       </p>
     </div>
   )

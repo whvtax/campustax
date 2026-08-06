@@ -31,7 +31,7 @@ export default function Nav() {
           />
         </Link>
 
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-6">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -41,6 +41,9 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
+        </div>
+
+        <div className="hidden lg:flex items-center">
           <a
             href={waLink('I have a question about my tax.')}
             target="_blank"

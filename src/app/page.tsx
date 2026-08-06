@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Faq from '@/components/Faq'
 import Reveal from '@/components/Reveal'
 import HeroDecor from '@/components/HeroDecor'
 import WhatsAppMock from '@/components/WhatsAppMock'
-import { IconReturn, IconSuper, IconTfn, IconAbn, IconMedicare, IconCalc } from '@/components/icons'
+import { IconReturn, IconSuper, IconTfn, IconAbn } from '@/components/icons'
 import StatNumber from '@/components/StatNumber'
 import TrustStrip from '@/components/TrustStrip'
 import CalcWidget from '@/components/CalcWidget'
@@ -48,18 +49,6 @@ const services = [
     text: 'Uber Eats and DoorDash pay you as a contractor. Set up your free ABN right and know what to put aside, so tax time brings no shock bill.',
     icon: <IconAbn />,
   },
-  {
-    href: '/medicare',
-    title: 'Medicare Levy Exemption',
-    text: 'Your OSHC usually means you should not pay the 2% Medicare levy. Most students never claim this.',
-    icon: <IconMedicare />,
-  },
-  {
-    href: '/calculator',
-    title: 'Tax Calculator',
-    text: 'Two minutes, two numbers, and you see your estimated refund or super payout before you talk to anyone.',
-    icon: <IconCalc />,
-  },
 ]
 
 const steps = [
@@ -74,7 +63,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative bg-navy-700 text-white">
         <HeroDecor />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-3 sm:py-4">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-2 sm:py-3">
           <div className="grid items-center gap-4 lg:grid-cols-[1.2fr_1fr]">
             <div>
               <p className="hero-in-1 text-xs font-bold uppercase tracking-[0.14em] text-gold-400">
@@ -85,10 +74,10 @@ export default function HomePage() {
                 <br />
                 Most international students qualify.
               </h1>
-              <p className="hero-in-3 mt-2 max-w-xl text-sm text-navy-200">
+              <p className="hero-in-3 mt-1 max-w-xl text-sm text-navy-200">
                 Get your tax refund estimate within 3 hours.
               </p>
-              <div className="hero-in-4 mt-4 flex flex-col sm:flex-row gap-2">
+              <div className="hero-in-4 mt-2 flex flex-col sm:flex-row gap-1">
                 <a
                   href={waLink('I want to check my tax refund.')}
                   target="_blank"
@@ -104,7 +93,14 @@ export default function HomePage() {
                   Try the calculator
                 </Link>
               </div>
-              <p className="mt-3 text-xs text-navy-200">
+              <div className="hero-in-5 mt-4 flex items-center justify-start gap-6">
+                <a href="https://www.tpb.gov.au/public-register" target="_blank" rel="noopener noreferrer" className="shrink-0">
+                  <Image src="/assets/tpb-logo.svg" alt="Tax Practitioners Board" width={40} height={50} />
+                </a>
+                <Image src="/assets/online-badge.svg" alt="100% online" width={48} height={48} />
+                <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold-400 bg-white/10 text-lg">🔒</span>
+              </div>
+              <p className="mt-2 text-xs text-navy-200">
                 {AGENT_LINE} (TPB {TPB}).
               </p>
             </div>
@@ -148,11 +144,6 @@ export default function HomePage() {
           <div className="mt-8">
             <TrustStrip />
           </div>
-          <p className="mt-6 text-center text-sm">
-            <Link href="/about" className="font-bold text-navy-600 hover:underline">
-              More about who we are
-            </Link>
-          </p>
         </Reveal>
       </section>
 
@@ -160,14 +151,10 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <Reveal>
           <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800 max-w-2xl">
-            Student tax is not backpacker tax. The rules are on your side.
+            Student tax is different. The rules are on your side.
           </h2>
           <p className="mt-4 max-w-2xl text-ink-secondary">
-            Working holiday makers pay 15% tax from their very first dollar. As a student
-            on a course longer than 6 months, you are usually a resident for tax purposes,
-            so you pay nothing until you earn more than $18,200 in a tax year. If
-            tax was taken out of your pay and you earned less than that, the
-            money is normally yours to claim back.
+            If you're studying in Australia for more than 6 months, you'll usually qualify as an Australian tax resident. That means you don't pay tax on the first $18,200 you earn each tax year. If tax was withheld from your pay and you earned less than that, you can usually claim it back.
           </p>
         </Reveal>
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
@@ -190,6 +177,23 @@ export default function HomePage() {
               </Link>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* Calculator, right here on the page */}
+      <section id="calculator" className="bg-navy-50">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16">
+          <Reveal>
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
+              Check your numbers right now
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-ink-secondary">
+              Two numbers in, estimate out. No email, no signup, nothing saved.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <CalcWidget />
+          </div>
         </div>
       </section>
 
@@ -226,23 +230,6 @@ export default function HomePage() {
             >
               Ask a free question on WhatsApp
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Calculator, right here on the page */}
-      <section id="calculator" className="bg-navy-50">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16">
-          <Reveal>
-            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
-              Check your numbers right now
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-ink-secondary">
-              Two numbers in, estimate out. No email, no signup, nothing saved.
-            </p>
-          </Reveal>
-          <div className="mt-8">
-            <CalcWidget />
           </div>
         </div>
       </section>
@@ -309,24 +296,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Reassurance */}
-      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
-        <Reveal>
-          <div className="rounded-2xl bg-gold-50 border border-gold-200 p-8 sm:p-10">
-            <h2 className="font-heading text-xl sm:text-2xl font-extrabold text-navy-800 max-w-2xl">
-              New to Australian tax? That is exactly who we work with.
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm sm:text-base text-ink-secondary">
-              First payslip, first tax file number, first tax return. We explain
-              everything in plain English, answer on WhatsApp in hours, and every
-              return for the {TAX_YEAR} year is checked and lodged through a
-              registered tax agent. No tax words you need a dictionary for.
-            </p>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Contact */}
+{/* Contact */}
       <section id="contact" className="bg-navy-800 text-white">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14 text-center">
           <Reveal>
