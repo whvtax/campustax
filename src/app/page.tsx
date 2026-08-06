@@ -142,10 +142,7 @@ export default function HomePage() {
               Who is behind CampusTax
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-ink-secondary">
-              A tax help service built only for international students, with every
-              return checked and lodged through a registered tax agent. Do not take
-              our word for it. Both registrations below are public, check them
-              yourself.
+              Built by former international students, for international students. Simple advice, clear answers, and every return checked and lodged by a registered tax agent.
             </p>
           </div>
           <div className="mt-8">
