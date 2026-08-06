@@ -136,12 +136,12 @@ export default function HomePage() {
               Built by former international students, for international students. Simple advice, clear answers, and every return checked and lodged by a registered tax agent.
             </p>
           </div>
-          <div className="mt-8 rounded-2xl overflow-hidden shadow-lg">
+          <div className="mt-8 rounded-2xl overflow-hidden shadow-lg mx-auto w-3/4">
             <Image
               src="/team.jpg"
               alt="CampusTax Team"
-              width={800}
-              height={500}
+              width={600}
+              height={375}
               className="w-full h-auto object-cover"
             />
           </div>
@@ -252,31 +252,6 @@ export default function HomePage() {
         </div>
       </section>
 
-
-      {/* Guides teaser */}
-      <section className="bg-cream">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
-                  Student tax, answered in plain English
-                </h2>
-                <p className="mt-2 max-w-xl text-sm sm:text-base text-ink-secondary">
-                  Residency, refunds, TFN, delivery work, super, Medicare. Real answers
-                  to the questions students actually ask, without the tax dictionary.
-                </p>
-              </div>
-              <Link
-                href="/guides"
-                className="btn-pop rounded-2xl border-2 border-navy-600 px-5 py-2.5 text-sm font-bold text-navy-600 hover:bg-navy-50"
-              >
-                Browse the guides
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
 
       {/* Reassurance - Before Contact */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
