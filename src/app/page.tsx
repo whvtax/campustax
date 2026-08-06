@@ -72,7 +72,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy-800 text-white">
+      <section className="relative bg-navy-700 text-white">
         <HeroDecor />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-3 sm:py-4">
           <div className="grid items-center gap-4 lg:grid-cols-[1.2fr_1fr]">
