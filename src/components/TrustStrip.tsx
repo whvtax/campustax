@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { TPB, ABN } from '@/lib/constants'
+import { TPB } from '@/lib/constants'
 
 /**
  * Verifiable trust signals. Every claim here links to a public register the
