@@ -101,7 +101,7 @@ export default function FormShell({
           href={waLink(waContext)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-block rounded-lg bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500"
+          className="mt-5 inline-block rounded-2xl bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500"
         >
           Open WhatsApp
         </a>
@@ -161,7 +161,7 @@ export default function FormShell({
       ))}
 
       {state === 'error' && (
-        <p role="alert" className="rounded-lg bg-error/5 border border-error px-4 py-3 text-sm font-semibold text-error">
+        <p role="alert" className="rounded-2xl bg-error/5 border border-error px-4 py-3 text-sm font-semibold text-error">
           {errMsg || 'Something went wrong on our side. Please try again, or just message us on WhatsApp.'}
         </p>
       )}
@@ -171,7 +171,7 @@ export default function FormShell({
           <button
             type="button"
             onClick={() => setStep((s) => Math.max(0, s - 1))}
-            className="rounded-lg border-2 border-navy-200 px-5 py-3 text-sm font-bold text-navy-600 hover:border-navy-400"
+            className="rounded-2xl border-2 border-navy-200 px-5 py-3 text-sm font-bold text-navy-600 hover:border-navy-400"
           >
             Back
           </button>
@@ -180,7 +180,7 @@ export default function FormShell({
           <button
             type="submit"
             disabled={state === 'sending'}
-            className="flex-1 rounded-lg bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500 disabled:opacity-60"
+            className="flex-1 rounded-2xl bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500 disabled:opacity-60"
           >
             {state === 'sending' ? 'Sending…' : submitLabel}
           </button>
@@ -188,7 +188,7 @@ export default function FormShell({
           <button
             type="button"
             onClick={next}
-            className="flex-1 rounded-lg bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
+            className="flex-1 rounded-2xl bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
           >
             Continue
           </button>

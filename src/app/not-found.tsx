@@ -14,10 +14,10 @@ export default function NotFound() {
           have answers though.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <Link href="/" className="rounded-lg bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500">
+          <Link href="/" className="rounded-2xl bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500">
             Back to the homepage
           </Link>
-          <Link href="/guides" className="rounded-lg border border-navy-500 px-6 py-3 font-bold text-white hover:bg-navy-700">
+          <Link href="/guides" className="rounded-2xl border border-navy-500 px-6 py-3 font-bold text-white hover:bg-navy-700">
             Browse the guides
           </Link>
         </div>
