@@ -8,7 +8,7 @@ function createMockRequest(headers: Record<string, string>): NextRequest {
   return {
     headers: {
       get: (key: string) => headerMap.get(key.toLowerCase()) || null,
-    } as any,
+    } as unknown as NextRequest['headers'],
   } as NextRequest
 }
 
