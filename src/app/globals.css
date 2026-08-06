@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4 {
+    @apply font-heading;
+  }
+  a:focus-visible, button:focus-visible {
+    @apply outline-none ring-2 ring-gold-500 ring-offset-2;
+  }
+}
+
+@layer components {
+  /* scroll reveal: hidden state only applies once JS has confirmed itself
+     (html.js set by an inline script in layout). No JS = content visible. */
+  .js .rv {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .js .rv-shown {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* interactive card */
+  .card-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  /* hover effects only where hover exists; touch keeps the :active press */
+  @media (hover: hover) and (pointer: fine) {
+    .card-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px -12px rgba(22, 32, 68, 0.25);
+    }
+    .btn-pop:hover {
+      box-shadow: 0 10px 22px -10px rgba(227, 185, 60, 0.7);
+    }
+  }
+  /* buttons get a subtle press feel */
+  .btn-pop {
+    transition: transform 0.15s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-pop:active {
+    transform: scale(0.98);
+  }
+  /* calculator result entrance */
+  .result-in {
+    animation: riseIn 0.35s ease both;
+  }
+}
+
+@layer components {
+  /* hero entrance: kicker, headline, sub, CTAs stagger in on load */
+  @keyframes riseIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-in-1, .hero-in-2, .hero-in-3, .hero-in-4 {
+    opacity: 0;
+    animation: riseIn 0.55s ease forwards;
+  }
+  .hero-in-2 { animation-delay: 0.12s; }
+  .hero-in-3 { animation-delay: 0.24s; }
+  .hero-in-4 { animation-delay: 0.36s; }
+
+  /* WhatsApp mock: messages pop in one by one once the mock is revealed */
+  @keyframes msgIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .js .wa-msg { opacity: 0; }
+  .rv-shown .wa-msg { animation: msgIn 0.4s ease forwards; }
+  .js .wa-typing { opacity: 0; }
+  .rv-shown .wa-typing { animation: msgIn 0.4s ease 4.2s forwards; }
+  .rv-shown .wa-msg:nth-of-type(1) { animation-delay: 0.3s; }
+  .rv-shown .wa-msg:nth-of-type(2) { animation-delay: 1.0s; }
+  .rv-shown .wa-msg:nth-of-type(3) { animation-delay: 1.8s; }
+  .rv-shown .wa-msg:nth-of-type(4) { animation-delay: 2.6s; }
+  .rv-shown .wa-msg:nth-of-type(5) { animation-delay: 3.4s; }
+
+  /* typing indicator dots */
+  @keyframes typingBounce {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+    30% { transform: translateY(-4px); opacity: 1; }
+  }
+  .typing-dot {
+    animation: typingBounce 1.2s infinite;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .js .rv, .rv {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .card-lift, .btn-pop, .transition-all, .transition-transform {
+    transition: none;
+  }
+  .hero-in-1, .hero-in-2, .hero-in-3, .hero-in-4, .wa-msg, .wa-typing, .result-in {
+    opacity: 1;
+    animation: none;
+  }
+  .typing-dot {
+    animation: none;
+  }
+}

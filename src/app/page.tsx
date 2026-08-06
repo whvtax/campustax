@@ -1,0 +1,395 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import Faq from '@/components/Faq'
+import Reveal from '@/components/Reveal'
+import HeroDecor from '@/components/HeroDecor'
+import WhatsAppMock from '@/components/WhatsAppMock'
+import { IconReturn, IconSuper, IconTfn, IconAbn, IconMedicare, IconCalc } from '@/components/icons'
+import StatNumber from '@/components/StatNumber'
+import TrustStrip from '@/components/TrustStrip'
+import CalcWidget from '@/components/CalcWidget'
+import { waLink, AGENT_LINE, TPB, TAX_YEAR } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+  title: 'CampusTax | Tax returns for international students in Australia',
+  description:
+    'Most international students pay no tax on the first $18,200 they earn. Refunds, super and Medicare exemptions, lodged through a registered tax agent.',
+}
+
+const stats = [
+  { key: 'threshold', value: 18200, prefix: '$', suffix: '', label: 'You usually pay no tax on the first $18,200 you earn each year' },
+  { key: 'dasp', value: 65, prefix: '', suffix: '%', label: 'of your super comes back to you when you leave. Students pay 35% tax on it, not the 65% backpacker rate' },
+  { key: 'hours', value: 48, prefix: '', suffix: ' hrs', label: 'You can work 48 hours a fortnight while your course is running' },
+]
+
+const services = [
+  {
+    href: '/tax-return',
+    title: 'Tax Return',
+    text: 'Lodge your return and claim back tax you did not need to pay. Most working students get money back.',
+    icon: <IconReturn />,
+  },
+  {
+    href: '/superannuation',
+    title: 'Super Refund (DASP)',
+    text: 'Leaving Australia for good? Your super can come with you. Students keep 65% of it after the 35% tax.',
+    icon: <IconSuper />,
+  },
+  {
+    href: '/tfn',
+    title: 'TFN',
+    text: 'Get your tax file number sorted before your first shift. It is free, and doing it late means nearly half your pay is held back until tax time.',
+    icon: <IconTfn />,
+  },
+  {
+    href: '/abn',
+    title: 'ABN for Delivery Work',
+    text: 'Uber Eats and DoorDash pay you as a contractor. Set up your free ABN right and know what to put aside, so tax time brings no shock bill.',
+    icon: <IconAbn />,
+  },
+  {
+    href: '/medicare',
+    title: 'Medicare Levy Exemption',
+    text: 'Your OSHC usually means you should not pay the 2% Medicare levy. Most students never claim this.',
+    icon: <IconMedicare />,
+  },
+  {
+    href: '/calculator',
+    title: 'Tax Calculator',
+    text: 'Two minutes, two numbers, and you see your estimated refund or super payout before you talk to anyone.',
+    icon: <IconCalc />,
+  },
+]
+
+const steps = [
+  { n: '1', title: 'Message us on WhatsApp', text: 'Even just hi works, in any language. A real person replies, usually within a few hours.' },
+  { n: '2', title: 'We check your details', text: 'Payslips, visa dates and work history. We find what you can claim.' },
+  { n: '3', title: 'Your return is lodged', text: 'Everything goes through a registered tax agent and your refund goes to your bank.' },
+]
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative bg-navy-800 text-white">
+        <HeroDecor />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
+          <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+            <div>
+              <p className="hero-in-1 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-gold-400">
+                For international students in Australia
+              </p>
+              <h1 className="hero-in-2 mt-4 font-heading font-extrabold leading-[1.12] tracking-tight text-[clamp(1.9rem,5vw,3.4rem)]">
+                Earn up to <span className="text-gold-400">$18,200 tax free.</span>{' '}
+                Most international students qualify.
+              </h1>
+              <p className="hero-in-3 mt-5 max-w-xl text-base sm:text-lg text-navy-200">
+                Studying in Australia for more than 6 months usually makes you a
+                resident for tax purposes. That means the first $18,200 you earn
+                each year is tax free, and many students get a refund at tax time.
+              </p>
+              <div className="hero-in-4 mt-8 flex flex-col sm:flex-row gap-3">
+                <a
+                  href={waLink('I want to check my tax refund.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pop rounded-lg bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500 text-center"
+                >
+                  Check my refund on WhatsApp
+                </a>
+                <Link
+                  href="/calculator"
+                  className="btn-pop rounded-lg border-2 border-white/25 px-6 py-3.5 font-bold text-white hover:bg-navy-700 text-center"
+                >
+                  Try the calculator
+                </Link>
+              </div>
+              <p className="mt-6 text-sm text-navy-200">
+                {AGENT_LINE} (TPB {TPB}).
+              </p>
+            </div>
+            {/* 99.9% of visitors are on mobile, so the chat mock shows there too */}
+            <Reveal delay={150}>
+              <WhatsAppMock />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 grid gap-5 sm:grid-cols-3">
+          {stats.map((s, i) => (
+            <Reveal key={s.key} delay={i * 90}>
+              <div className="card-lift h-full rounded-xl bg-white border border-navy-100 p-6">
+                <p className="font-heading text-3xl font-extrabold text-navy-800">
+                  <span className="border-b-4 border-gold-400 pb-0.5">
+                    <StatNumber value={s.value} prefix={s.prefix} suffix={s.suffix} />
+                  </span>
+                </p>
+                <p className="mt-3 text-sm text-ink-secondary">{s.label}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* About + verifiable trust */}
+      <section id="about" className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+        <Reveal>
+          <div className="text-center">
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
+              Who is behind CampusTax
+            </h2>
+            <p className="mx-auto mt-3 max-w-2xl text-sm sm:text-base text-ink-secondary">
+              A tax help service built only for international students, with every
+              return checked and lodged through a registered tax agent. Do not take
+              our word for it. Both registrations below are public, check them
+              yourself.
+            </p>
+          </div>
+          <div className="mt-8">
+            <TrustStrip />
+          </div>
+          <p className="mt-6 text-center text-sm">
+            <Link href="/about" className="font-bold text-navy-600 hover:underline">
+              More about who we are
+            </Link>
+          </p>
+        </Reveal>
+      </section>
+
+      {/* Difference block */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+        <Reveal>
+          <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800 max-w-2xl">
+            Student tax is not backpacker tax. The rules are on your side.
+          </h2>
+          <p className="mt-4 max-w-2xl text-ink-secondary">
+            Working holiday makers pay 15% tax from their very first dollar. As a student
+            on a course longer than 6 months, you are usually a resident for tax purposes,
+            so you pay nothing until you earn more than $18,200 in a tax year. If
+            tax was taken out of your pay and you earned less than that, the
+            money is normally yours to claim back.
+          </p>
+        </Reveal>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          {services.map((s, i) => (
+            <Reveal key={s.href} delay={i * 80}>
+              <Link
+                href={s.href}
+                className="card-lift group flex h-full gap-5 rounded-xl border border-navy-100 p-6 hover:border-navy-300"
+              >
+                <div className="shrink-0">{s.icon}</div>
+                <div>
+                  <h3 className="font-heading text-lg font-extrabold text-navy-800 group-hover:text-navy-600">
+                    {s.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-ink-secondary">{s.text}</p>
+                  <p className="mt-3 text-sm font-bold text-navy-600">
+                    Learn more <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1">→</span>
+                  </p>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="relative bg-navy-800 text-white overflow-hidden">
+        <HeroDecor />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-16">
+          <Reveal>
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold">How it works</h2>
+          </Reveal>
+          <div className="relative mt-10 grid gap-10 sm:grid-cols-3">
+            {/* connector line */}
+            <div aria-hidden="true" className="absolute left-0 right-0 top-5 hidden sm:block">
+              <div className="mx-16 border-t-2 border-dashed border-navy-500" />
+            </div>
+            {steps.map((st, i) => (
+              <Reveal key={st.n} delay={i * 110}>
+                <div className="relative">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gold-400 font-heading text-lg font-extrabold text-navy-900 shadow-lg shadow-gold-400/30">
+                    {st.n}
+                  </div>
+                  <h3 className="mt-4 font-heading text-lg font-extrabold">{st.title}</h3>
+                  <p className="mt-2 text-sm text-navy-200">{st.text}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-12">
+            <a
+              href={waLink('I have a question.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-pop inline-block rounded-lg bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
+            >
+              Ask a free question on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Calculator, right here on the page */}
+      <section id="calculator" className="bg-navy-50">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16">
+          <Reveal>
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
+              Check your numbers right now
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-ink-secondary">
+              Two numbers in, estimate out. No email, no signup, nothing saved.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <CalcWidget />
+          </div>
+        </div>
+      </section>
+
+      {/* TFN and ABN, the short version */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+        <Reveal>
+          <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800 max-w-2xl">
+            Starting work this week? Two numbers first.
+          </h2>
+        </Reveal>
+        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+          <Reveal>
+            <div className="card-lift h-full rounded-xl border border-navy-100 p-6">
+              <h3 className="font-heading text-lg font-extrabold text-navy-800">TFN, for any job with a payslip</h3>
+              <p className="mt-2 text-sm text-ink-secondary">
+                Free from the ATO, ten minutes online after you land, arrives by
+                post within 28 days. Without it your employer must hold back nearly
+                half your pay. Apply in your first week, before you need it.
+              </p>
+              <p className="mt-3 text-sm font-bold text-navy-600">
+                <Link href="/tfn" className="hover:underline">How to get your TFN →</Link>
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={90}>
+            <div className="card-lift h-full rounded-xl border border-navy-100 p-6">
+              <h3 className="font-heading text-lg font-extrabold text-navy-800">ABN, for delivery and freelance</h3>
+              <p className="mt-2 text-sm text-ink-secondary">
+                Uber Eats and DoorDash pay you as a contractor, so you need a free
+                ABN. Nobody takes tax out of that pay, so put around 20 cents per
+                dollar aside and the bill at tax time never surprises you.
+              </p>
+              <p className="mt-3 text-sm font-bold text-navy-600">
+                <Link href="/abn" className="hover:underline">Set up your ABN right →</Link>
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Guides teaser */}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14">
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
+                  Student tax, answered in plain English
+                </h2>
+                <p className="mt-2 max-w-xl text-sm sm:text-base text-ink-secondary">
+                  Residency, refunds, TFN, delivery work, super, Medicare. Real answers
+                  to the questions students actually ask, without the tax dictionary.
+                </p>
+              </div>
+              <Link
+                href="/guides"
+                className="btn-pop rounded-lg border-2 border-navy-600 px-5 py-2.5 text-sm font-bold text-navy-600 hover:bg-navy-50"
+              >
+                Browse the guides
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Reassurance */}
+      <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
+        <Reveal>
+          <div className="rounded-2xl bg-gold-50 border border-gold-200 p-8 sm:p-10">
+            <h2 className="font-heading text-xl sm:text-2xl font-extrabold text-navy-800 max-w-2xl">
+              New to Australian tax? That is exactly who we work with.
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm sm:text-base text-ink-secondary">
+              First payslip, first tax file number, first tax return. We explain
+              everything in plain English, answer on WhatsApp in hours, and every
+              return for the {TAX_YEAR} year is checked and lodged through a
+              registered tax agent. No tax words you need a dictionary for.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-navy-800 text-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-14 text-center">
+          <Reveal>
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold">
+              Talk to a real person
+            </h2>
+            <p className="mx-auto mt-3 max-w-xl text-sm sm:text-base text-navy-200">
+              Questions cost nothing, in any language. You get the exact price in
+              the chat before anything starts.
+            </p>
+            <div className="mt-7">
+              <a
+                href={waLink('I have a question.')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pop inline-block rounded-lg bg-gold-400 px-7 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
+              >
+                Ask a free question on WhatsApp
+              </a>
+            </div>
+            <p className="mt-5 text-sm text-navy-200">
+              Prefer email?{' '}
+              <a href="mailto:info@campustax.com.au" className="font-bold text-gold-400 hover:underline">
+                info@campustax.com.au
+              </a>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <Faq
+        title="Quick answers"
+        items={[
+          {
+            q: 'Will I pay tax while studying in Australia?',
+            a: 'Yes, but usually less than you think. Most students are residents for tax purposes, so the first $18,200 earned each tax year is tax free. Tax withheld from pay below that level normally comes back as a refund.',
+          },
+          {
+            q: 'How do I know if I am a resident for tax purposes?',
+            a: 'If your course runs longer than 6 months, the ATO usually treats you as a resident for tax purposes. It has nothing to do with citizenship or permanent residency. Short course students are usually not residents and different rates apply.',
+          },
+          {
+            q: 'How much does it cost?',
+            a: 'You get the exact price in the chat, before you send a single document and before anything starts. If it is not worth it for you, you say no and that is that. Questions are always free.',
+          },
+          {
+            q: 'When is the tax return deadline?',
+            a: 'The tax year ends on 30 June and self lodged returns are due by 31 October. Lodging through a registered tax agent usually gives you longer.',
+          },
+          {
+            q: 'How do I know this is not a scam?',
+            a: 'Check us yourself, we prefer it. The registered tax agent number 26233096 is on the public TPB register and the ABN is on ABN Lookup, both linked in the footer and on the About page. Also, this site tells you again and again that the TFN and the ABN are free from the government. A scam would hide that.',
+          },
+          {
+            q: 'Can you help me in my language?',
+            a: 'Yes. WhatsApp us in whatever language is easiest for you and we will make it work. Many of our clients are asking about Australian tax for the first time, and that is exactly what we are here for.',
+          },
+        ]}
+      />
+    </>
+  )
+}
