@@ -1,5 +1,7 @@
 import type { Guide } from '../types'
+
 const UPDATED = '12 July 2026'
+
 export const workGuides: Guide[] = [
   {
     slug: 'how-many-hours-can-international-students-work',
@@ -62,6 +64,7 @@ export const workGuides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about work hours and my tax.',
   },
+
   {
     slug: 'two-jobs-international-student',
     title: 'Can I have two jobs as an international student in Australia?',

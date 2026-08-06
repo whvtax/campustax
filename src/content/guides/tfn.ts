@@ -1,5 +1,7 @@
 import type { Guide } from '../types'
+
 const UPDATED = '5 August 2026'
+
 export const tfnGuides: Guide[] = [
   {
     slug: 'how-to-get-tfn-international-student',
@@ -61,6 +63,7 @@ export const tfnGuides: Guide[] = [
     serviceLink: { href: '/tfn', label: 'Our TFN service' },
     waContext: 'I need help getting my TFN.',
   },
+
   {
     slug: 'work-before-tfn-arrives',
     title: 'Can I start working before my TFN arrives?',

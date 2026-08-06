@@ -5,12 +5,12 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { waLink } from '@/lib/constants'
 
-// Main navigation menu
+// Slim top nav: the four core destinations only. Calculator, About, Contact,
+// TFN and ABN live as sections on the home page and as standalone URLs
+// reachable from there and from the footer.
 const links = [
-  { href: '/tfn', label: 'TFN' },
-  { href: '/abn', label: 'ABN' },
   { href: '/tax-return', label: 'Tax Return' },
-  { href: '/superannuation', label: 'Super' },
+  { href: '/superannuation', label: 'Super Refund' },
   { href: '/medicare', label: 'Medicare' },
   { href: '/guides', label: 'Guides' },
 ]
@@ -31,7 +31,7 @@ export default function Nav() {
           />
         </Link>
 
-        <div className="hidden lg:flex flex-1 items-center justify-center gap-6">
+        <div className="hidden lg:flex items-center gap-6">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -41,9 +41,6 @@ export default function Nav() {
               {l.label}
             </Link>
           ))}
-        </div>
-
-        <div className="hidden lg:flex items-center gap-4">
           <a
             href={waLink('I have a question about my tax.')}
             target="_blank"

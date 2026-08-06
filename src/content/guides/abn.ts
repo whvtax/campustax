@@ -1,5 +1,7 @@
 import type { Guide } from '../types'
+
 const UPDATED = '12 July 2026'
+
 export const abnGuides: Guide[] = [
   {
     slug: 'abn-for-delivery-riders-students',

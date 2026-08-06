@@ -1,15 +1,14 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import Image from 'next/image'
 import Faq from '@/components/Faq'
 import Reveal from '@/components/Reveal'
 import HeroDecor from '@/components/HeroDecor'
 import WhatsAppMock from '@/components/WhatsAppMock'
-import { IconReturn, IconSuper, IconTfn, IconAbn } from '@/components/icons'
+import { IconReturn, IconSuper, IconTfn, IconAbn, IconMedicare, IconCalc } from '@/components/icons'
 import StatNumber from '@/components/StatNumber'
 import TrustStrip from '@/components/TrustStrip'
 import CalcWidget from '@/components/CalcWidget'
-import { waLink } from '@/lib/constants'
+import { waLink, AGENT_LINE, TPB, TAX_YEAR } from '@/lib/constants'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -49,6 +48,18 @@ const services = [
     text: 'Uber Eats and DoorDash pay you as a contractor. Set up your free ABN right and know what to put aside, so tax time brings no shock bill.',
     icon: <IconAbn />,
   },
+  {
+    href: '/medicare',
+    title: 'Medicare Levy Exemption',
+    text: 'Your OSHC usually means you should not pay the 2% Medicare levy. Most students never claim this.',
+    icon: <IconMedicare />,
+  },
+  {
+    href: '/calculator',
+    title: 'Tax Calculator',
+    text: 'Two minutes, two numbers, and you see your estimated refund or super payout before you talk to anyone.',
+    icon: <IconCalc />,
+  },
 ]
 
 const steps = [
@@ -87,27 +98,15 @@ export default function HomePage() {
                   Check my refund on WhatsApp
                 </a>
                 <Link
-<<<<<<< HEAD
                   href="/calculator"
-=======
-                  href="/#calculator"
->>>>>>> 55c74f390d2ce5fa905c43d102e617629c5742ec
                   className="btn-pop rounded-2xl border-2 border-white/25 px-5 py-2.5 font-bold text-sm text-white hover:bg-navy-700 text-center"
                 >
                   Try the calculator
                 </Link>
               </div>
-<<<<<<< HEAD
               <p className="mt-3 text-xs text-navy-200">
                 {AGENT_LINE} (TPB {TPB}).
               </p>
-=======
-              <div className="mt-6 flex justify-center">
-                <div className="inline-block">
-                  <TrustStrip align="center" iconsOnly={true} />
-                </div>
-              </div>
->>>>>>> 55c74f390d2ce5fa905c43d102e617629c5742ec
             </div>
             {/* 99.9% of visitors are on mobile, so the chat mock shows there too */}
             <Reveal delay={150}>
@@ -146,18 +145,14 @@ export default function HomePage() {
               Built by former international students, for international students. Simple advice, clear answers, and every return checked and lodged by a registered tax agent.
             </p>
           </div>
-          <div className="mt-8 rounded-2xl overflow-hidden shadow-lg mx-auto w-3/4">
-            <Image
-              src="/team.jpg"
-              alt="CampusTax Team"
-              width={600}
-              height={375}
-              className="w-full h-auto object-cover"
-            />
-          </div>
           <div className="mt-8">
             <TrustStrip />
           </div>
+          <p className="mt-6 text-center text-sm">
+            <Link href="/about" className="font-bold text-navy-600 hover:underline">
+              More about who we are
+            </Link>
+          </p>
         </Reveal>
       </section>
 
@@ -165,43 +160,16 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <Reveal>
           <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800 max-w-2xl">
-            Student tax works in your favour.
+            Student tax is not backpacker tax. The rules are on your side.
           </h2>
           <p className="mt-4 max-w-2xl text-ink-secondary">
-            If you&apos;re studying a course longer than 6 months, you&apos;re usually considered a resident for tax purposes. This means you generally don&apos;t pay tax until you earn more than $18,200 in a financial year. If tax has already been taken from your pay and you earned less than that, you can usually claim it back.
+            Working holiday makers pay 15% tax from their very first dollar. As a student
+            on a course longer than 6 months, you are usually a resident for tax purposes,
+            so you pay nothing until you earn more than $18,200 in a tax year. If
+            tax was taken out of your pay and you earned less than that, the
+            money is normally yours to claim back.
           </p>
         </Reveal>
-
-        {/* Calculator - Featured in Phone Mock */}
-        <div className="mt-12 rounded-2xl bg-gradient-to-br from-navy-800 to-navy-900 p-8 sm:p-12 border border-gold-400/20">
-          <Reveal>
-            <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-white">
-              Check your numbers right now
-            </h3>
-            <p className="mt-3 text-base text-navy-100">
-              Two numbers in, estimate out. No email, no signup, nothing saved.
-            </p>
-          </Reveal>
-          <div className="mt-8 flex justify-center">
-            <div className="w-full max-w-sm rounded-3xl border-[8px] border-navy-900 bg-white shadow-2xl overflow-hidden">
-              {/* Phone Header */}
-              <div className="flex items-center gap-2 bg-navy-800 px-4 py-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gold-400 font-heading text-xs font-extrabold text-navy-900">
-                  CT
-                </div>
-                <div className="leading-tight flex-1">
-                  <p className="text-sm font-bold text-white">CampusTax</p>
-                  <p className="text-[11px] text-navy-200">Calculator</p>
-                </div>
-              </div>
-              {/* Calculator Content */}
-              <div className="p-4 sm:p-6 bg-white min-h-[400px] overflow-y-auto">
-                <CalcWidget />
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {services.map((s, i) => (
             <Reveal key={s.href} delay={i * 80}>
@@ -262,8 +230,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Calculator, right here on the page */}
+      <section id="calculator" className="bg-navy-50">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 py-16">
+          <Reveal>
+            <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-800">
+              Check your numbers right now
+            </h2>
+            <p className="mt-2 text-sm sm:text-base text-ink-secondary">
+              Two numbers in, estimate out. No email, no signup, nothing saved.
+            </p>
+          </Reveal>
+          <div className="mt-8">
+            <CalcWidget />
+          </div>
+        </div>
+      </section>
 
-<<<<<<< HEAD
       {/* TFN and ABN, the short version */}
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <Reveal>
@@ -327,9 +310,6 @@ export default function HomePage() {
       </section>
 
       {/* Reassurance */}
-=======
-      {/* Reassurance - Before Contact */}
->>>>>>> 55c74f390d2ce5fa905c43d102e617629c5742ec
       <section className="mx-auto max-w-6xl px-4 sm:px-6 py-16">
         <Reveal>
           <div className="rounded-2xl bg-gold-50 border border-gold-200 p-8 sm:p-10">
@@ -339,7 +319,7 @@ export default function HomePage() {
             <p className="mt-3 max-w-2xl text-sm sm:text-base text-ink-secondary">
               First payslip, first tax file number, first tax return. We explain
               everything in plain English, answer on WhatsApp in hours, and every
-              return for the 2025-26 year is checked and lodged through a
+              return for the {TAX_YEAR} year is checked and lodged through a
               registered tax agent. No tax words you need a dictionary for.
             </p>
           </div>

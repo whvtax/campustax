@@ -1,5 +1,7 @@
 import type { Guide } from '../types'
+
 const UPDATED = '15 July 2026'
+
 export const batch3Guides: Guide[] = [
   {
     slug: 'what-can-international-students-claim-on-tax',
@@ -62,6 +64,7 @@ export const batch3Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about what I can claim.',
   },
+
   {
     slug: 'lodge-tax-return-under-18200',
     title: 'Do I need to lodge a tax return if I earn less than $18,200?',
@@ -122,6 +125,7 @@ export const batch3Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I earned under the threshold and am not sure if I need to lodge.',
   },
+
   {
     slug: 'when-is-the-tax-deadline-australia',
     title: 'When is the tax return deadline in Australia?',
@@ -182,6 +186,7 @@ export const batch3Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about the tax deadline.',
   },
+
   {
     slug: 'tfn-or-abn-which-one',
     title: 'TFN or ABN: which one do I need as a student?',
@@ -242,6 +247,7 @@ export const batch3Guides: Guide[] = [
     serviceLink: { href: '/tfn', label: 'Our TFN service' },
     waContext: 'I am not sure if I need a TFN or an ABN.',
   },
+
   {
     slug: 'tax-on-abn-income-students',
     title: 'How much tax do I pay on ABN income as a student?',
@@ -299,8 +305,10 @@ export const batch3Guides: Guide[] = [
       },
     ],
     related: ['abn-for-delivery-riders-students', 'tfn-or-abn-which-one', 'what-can-international-students-claim-on-tax'],
+    serviceLink: { href: '/calculator', label: 'Run your numbers in the calculator' },
     waContext: 'I earn ABN income and want to understand my tax.',
   },
+
   {
     slug: 'do-international-students-get-superannuation',
     title: 'Do international students get superannuation?',

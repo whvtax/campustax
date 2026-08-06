@@ -1,5 +1,7 @@
 import type { Guide } from '../types'
+
 const UPDATED = '2 August 2026'
+
 export const superGuides: Guide[] = [
   {
     slug: 'super-refund-leaving-australia',
@@ -61,6 +63,7 @@ export const superGuides: Guide[] = [
     serviceLink: { href: '/superannuation', label: 'Our super refund service' },
     waContext: 'I am leaving Australia and want to claim my super.',
   },
+
   {
     slug: 'how-much-tax-super-leaving-australia',
     title: 'How much tax is taken from my super when I leave Australia?',
@@ -118,6 +121,7 @@ export const superGuides: Guide[] = [
       },
     ],
     related: ['super-refund-leaving-australia', 'tax-refund-international-students', 'how-much-tax-do-international-students-pay'],
+    serviceLink: { href: '/calculator', label: 'Estimate your payout in the calculator' },
     waContext: 'I have a question about the tax on my super payout.',
   },
 ]

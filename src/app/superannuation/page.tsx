@@ -170,7 +170,6 @@ export default function SuperPage() {
           </div>
         </div>
 
-<<<<<<< HEAD
         <div className="pt-8 border-t border-navy-100">
           <p className="text-sm text-ink-secondary">
             <strong>Connected:</strong> Your{' '}
@@ -184,19 +183,6 @@ export default function SuperPage() {
             to see your estimated payout right now.
           </p>
         </div>
-=======
-        <p className="text-sm text-ink-secondary">
-          Planning your exit?{' '}
-          <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
-            Your final tax return
-          </Link>{' '}
-          and your super claim belong together. Try the{' '}
-          <Link href="/#calculator" className="font-bold text-navy-600 hover:underline">
-            calculator on the home page
-          </Link>{' '}
-          to see your estimated payout.
-        </p>
->>>>>>> 55c74f390d2ce5fa905c43d102e617629c5742ec
       </section>
 
       <GuideLinks slugs={['super-refund-leaving-australia', 'how-much-tax-super-leaving-australia', 'how-to-claim-dasp', 'do-international-students-get-superannuation']} />

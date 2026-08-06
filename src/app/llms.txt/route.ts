@@ -26,6 +26,7 @@ export async function GET() {
     `- [TFN](${SITE_URL}/tfn): Tax file number setup for students`,
     `- [ABN](${SITE_URL}/abn): ABN setup for delivery and freelance work`,
     `- [Medicare Levy Exemption](${SITE_URL}/medicare): OSHC based exemption worth 2% of income`,
+    `- [Calculator](${SITE_URL}/calculator): Refund and DASP estimates`,
     '',
     '## Guides',
     ...guides.map((g) => `- [${g.title}](${SITE_URL}/guides/${g.slug}): ${g.shortAnswer}`),

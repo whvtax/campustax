@@ -1,5 +1,7 @@
 import type { Guide } from '../types'
+
 const UPDATED = '27 July 2026'
+
 export const medicareScholarshipGuides: Guide[] = [
   {
     slug: 'medicare-levy-exemption-international-students',
@@ -65,6 +67,7 @@ export const medicareScholarshipGuides: Guide[] = [
     serviceLink: { href: '/medicare', label: 'Our Medicare exemption service' },
     waContext: 'I want to claim the Medicare levy exemption.',
   },
+
   {
     slug: 'are-scholarships-taxable-australia',
     title: 'Are scholarships taxable in Australia?',

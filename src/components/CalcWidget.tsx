@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { BRACKETS, DASP_STUDENT_RATE, waLink } from '@/lib/constants'
+import { BRACKETS, DASP_STUDENT_RATE, waLink, AGENT_LINE, TPB } from '@/lib/constants'
 
 /** Income tax for a resident, 2025-26 brackets. */
 function taxOnIncome(income: number): number {
@@ -176,7 +176,8 @@ export default function CalcWidget() {
       )}
 
       <p className="mt-10 text-xs text-ink-muted">
-        These are estimates only and are not tax advice. Your final result depends on your full situation.
+        These are estimates only and are not tax advice. Your final result depends on
+        your full situation. {AGENT_LINE} (TPB {TPB}).
       </p>
     </div>
   )

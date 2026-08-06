@@ -1,5 +1,7 @@
 import type { Guide } from '../types'
+
 const UPDATED = '18 July 2026'
+
 export const batch4Guides: Guide[] = [
   {
     slug: 'what-happens-if-i-dont-lodge',
@@ -54,6 +56,7 @@ export const batch4Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have unlodged tax returns and want to fix it.',
   },
+
   {
     slug: 'first-year-in-australia-tax',
     title: 'I just arrived in Australia. Do I pay tax in my first year?',
@@ -107,6 +110,7 @@ export const batch4Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I just arrived in Australia and have a first year tax question.',
   },
+
   {
     slug: 'tax-free-threshold-second-job',
     title: 'Should I claim the tax free threshold on my second job?',
@@ -160,6 +164,7 @@ export const batch4Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about the threshold on my second job.',
   },
+
   {
     slug: 'unlimited-work-hours-holidays',
     title: 'Can international students work unlimited hours during holidays?',
@@ -210,8 +215,10 @@ export const batch4Guides: Guide[] = [
       },
     ],
     related: ['how-many-hours-can-international-students-work', 'tax-refund-international-students', 'two-jobs-international-student'],
+    serviceLink: { href: '/calculator', label: 'Estimate your refund in the calculator' },
     waContext: 'I have a question about working during the holidays.',
   },
+
   {
     slug: 'why-is-so-much-tax-taken-from-my-pay',
     title: 'Why did my employer take so much tax from my payslip?',
@@ -265,6 +272,7 @@ export const batch4Guides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'Too much tax is being taken from my pay.',
   },
+
   {
     slug: 'how-to-claim-dasp',
     title: 'How do I claim my DASP after leaving Australia?',
