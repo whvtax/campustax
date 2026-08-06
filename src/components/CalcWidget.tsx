@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { BRACKETS, DASP_STUDENT_RATE, waLink, AGENT_LINE, TPB } from '@/lib/constants'
+import { BRACKETS, DASP_STUDENT_RATE, waLink } from '@/lib/constants'
 
 /** Income tax for a resident, 2025-26 brackets. */
 function taxOnIncome(income: number): number {

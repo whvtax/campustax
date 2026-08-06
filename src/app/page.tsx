@@ -9,7 +9,7 @@ import { IconReturn, IconSuper, IconTfn, IconAbn } from '@/components/icons'
 import StatNumber from '@/components/StatNumber'
 import TrustStrip from '@/components/TrustStrip'
 import CalcWidget from '@/components/CalcWidget'
-import { waLink, AGENT_LINE, TPB, TAX_YEAR } from '@/lib/constants'
+import { waLink, AGENT_LINE, TPB } from '@/lib/constants'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -63,7 +63,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative bg-navy-700 text-white">
         <HeroDecor />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-2 sm:py-3">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-3 sm:py-4">
           <div className="grid items-center gap-4 lg:grid-cols-[1.2fr_1fr]">
             <div>
               <p className="hero-in-1 text-xs font-bold uppercase tracking-[0.14em] text-gold-400">
@@ -74,10 +74,10 @@ export default function HomePage() {
                 <br />
                 Most international students qualify.
               </h1>
-              <p className="hero-in-3 mt-1 max-w-xl text-sm text-navy-200">
+              <p className="hero-in-3 mt-2 max-w-xl text-sm text-navy-200">
                 Get your tax refund estimate within 3 hours.
               </p>
-              <div className="hero-in-4 mt-2 flex flex-col sm:flex-row gap-1">
+              <div className="hero-in-4 mt-4 flex flex-col sm:flex-row gap-2">
                 <a
                   href={waLink('I want to check my tax refund.')}
                   target="_blank"
@@ -93,14 +93,14 @@ export default function HomePage() {
                   Try the calculator
                 </Link>
               </div>
-              <div className="hero-in-5 mt-4 flex items-center justify-start gap-6">
+              <div className="hero-in-5 mt-6 flex items-center justify-start gap-6">
                 <a href="https://www.tpb.gov.au/public-register" target="_blank" rel="noopener noreferrer" className="shrink-0">
                   <Image src="/assets/tpb-logo.svg" alt="Tax Practitioners Board" width={40} height={50} />
                 </a>
                 <Image src="/assets/online-badge.svg" alt="100% online" width={48} height={48} />
                 <span className="flex h-12 w-12 items-center justify-center rounded-full border-2 border-gold-400 bg-white/10 text-lg">🔒</span>
               </div>
-              <p className="mt-2 text-xs text-navy-200">
+              <p className="mt-3 text-xs text-navy-200">
                 {AGENT_LINE} (TPB {TPB}).
               </p>
             </div>
@@ -154,7 +154,7 @@ export default function HomePage() {
             Student tax is different. The rules are on your side.
           </h2>
           <p className="mt-4 max-w-2xl text-ink-secondary">
-            If you're studying in Australia for more than 6 months, you'll usually qualify as an Australian tax resident. That means you don't pay tax on the first $18,200 you earn each tax year. If tax was withheld from your pay and you earned less than that, you can usually claim it back.
+            If you&apos;re studying in Australia for more than 6 months, you&apos;ll usually qualify as an Australian tax resident. That means you don&apos;t pay tax on the first $18,200 you earn each tax year. If tax was withheld from your pay and you earned less than that, you can usually claim it back.
           </p>
         </Reveal>
         <div className="mt-10 grid gap-5 sm:grid-cols-2">

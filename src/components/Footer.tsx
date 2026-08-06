@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { TAGLINE, TPB, waLink } from '@/lib/constants'
+import { TAGLINE, waLink } from '@/lib/constants'
 
 export default function Footer() {
   return (
