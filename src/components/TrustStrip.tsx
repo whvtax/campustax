@@ -18,26 +18,34 @@ export default function TrustStrip({ align = 'center' }: { align?: 'center' | 's
       >
         <Image src="/assets/tpb-logo.svg" alt="Tax Practitioners Board registered tax agent symbol" width={54} height={67} />
         <span className="text-left text-xs font-semibold leading-snug text-ink-secondary">
-          תחת השגחת סוכן מס רשום<br />
-          <span className="text-navy-600 underline">בדוק את הרישום {TPB}</span>
+          Lodged through a<br />registered tax agent<br />
+          <span className="text-navy-600 underline">search the register for {TPB}</span>
         </span>
       </a>
       <div className="flex items-center gap-3">
         <Image src="/assets/online-badge.svg" alt="" width={54} height={54} />
         <span className="text-left text-xs font-semibold leading-snug text-ink-secondary">
-          No office. No paperwork.<br />
-          From your phone
+          100% online<br />
+          WhatsApp, in your language<br />
+          Everything from your phone
         </span>
       </div>
-      <div className="flex items-center gap-3">
-        <span className="flex h-[54px] w-[54px] items-center justify-center rounded-full border-[3px] border-gold-400 bg-navy-800 font-heading text-2xl">
-          🔒
+      <a
+        href="https://abr.business.gov.au/ABN/View?abn=26669927959"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-3"
+        aria-label="Check the ABN on the Australian Business Register"
+      >
+        <span className="flex h-[54px] w-[54px] items-center justify-center rounded-full border-[3px] border-gold-400 bg-navy-800 font-heading text-sm font-extrabold text-white">
+          ABN
         </span>
         <span className="text-left text-xs font-semibold leading-snug text-ink-secondary">
-          כל הנתונים שלך<br />
-          מאובטחים לגמרי
+          Run by The Accounting Academy Pty Ltd<br />
+          ABN {ABN}<br />
+          <span className="text-navy-600 underline">check it on ABN Lookup</span>
         </span>
-      </div>
+      </a>
     </div>
   )
 }
