@@ -74,20 +74,19 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative bg-navy-800 text-white">
         <HeroDecor />
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-16 sm:py-24">
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-10">
           <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
             <div>
               <p className="hero-in-1 text-xs sm:text-sm font-bold uppercase tracking-[0.14em] text-gold-400">
                 For international students in Australia
               </p>
-              <h1 className="hero-in-2 mt-4 font-heading font-extrabold leading-[1.12] tracking-tight text-[clamp(1.9rem,5vw,3.4rem)]">
-                Earn up to <span className="text-gold-400">$18,200 tax free.</span>{' '}
+              <h1 className="hero-in-2 mt-4 font-heading font-extrabold leading-[1.12] tracking-tight text-[clamp(1.7rem,4vw,2.2rem)]">
+                Earn up to <span className="text-gold-400">$18,200 tax free.</span>
+                <br />
                 Most international students qualify.
               </h1>
               <p className="hero-in-3 mt-5 max-w-xl text-base sm:text-lg text-navy-200">
-                Studying in Australia for more than 6 months usually makes you a
-                resident for tax purposes. That means the first $18,200 you earn
-                each year is tax free, and many students get a refund at tax time.
+                Get your tax refund estimate within 3 hours.
               </p>
               <div className="hero-in-4 mt-8 flex flex-col sm:flex-row gap-3">
                 <a
