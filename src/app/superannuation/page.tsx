@@ -45,65 +45,144 @@ export default function SuperPage() {
         </p>
       </PageHero>
 
-      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-12">
-        <div className="rounded-2xl bg-gold-50 border border-gold-200 p-6 sm:p-8">
-          <h2 className="font-heading text-xl font-extrabold text-navy-800">
-            35%, not 65%. This mistake costs students real money.
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            Half the internet will tell you that super refunds are taxed at 65%.
-            That is the rate for working holiday visas. If your super was earned
-            while you held a student visa, the DASP tax is 35%. Some students never
-            claim because they think most of the money is gone. It is not. On a
-            typical balance of $4,000, around $2,600 is yours.
+      {/* Tax Rate Comparison */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
+        <div className="rounded-2xl bg-gradient-to-r from-green-50 to-cream border border-green-200 p-6 sm:p-8">
+          <p className="text-sm font-bold text-green-600 uppercase tracking-wide">The rate that matters</p>
+          <p className="mt-2 font-heading text-4xl font-extrabold text-navy-800">35%</p>
+          <p className="mt-1 text-sm text-ink-secondary"><strong>Student visa tax rate</strong> on superannuation payout</p>
+          <p className="mt-4 text-sm text-ink-secondary">
+            (Not 65%—that&apos;s the working holiday rate. Don&apos;t let this mistake cost you real money.)
           </p>
         </div>
+      </section>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            First, check the money is actually there
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-16">
+        {/* Comparison */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            35% vs 65% — Know the difference
           </h2>
-          <p className="mt-3 text-ink-secondary">
-            Super only exists if your employer really paid it. Cash in hand work
-            usually means no super, and even regular employers sometimes fall
-            behind. Your payslip shows what should have been paid. Your super fund
-            account shows what actually was. If you worked several jobs you may have
-            several funds, and the ATO may be holding unclaimed money for you as
-            well. We search all of it as part of the claim.
-          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-green-50 border-2 border-green-300 p-6">
+              <p className="font-bold text-green-900">✓ Student Visa</p>
+              <p className="mt-1 text-4xl font-extrabold text-green-600">35%</p>
+              <p className="mt-3 text-sm text-green-900">Tax on super payout</p>
+              <p className="mt-4 text-sm text-green-800">
+                On $4,000 balance → You keep $2,600
+              </p>
+            </div>
+            <div className="rounded-xl bg-red-50 border-2 border-red-300 p-6">
+              <p className="font-bold text-red-900">✗ Working Holiday Visa</p>
+              <p className="mt-1 text-4xl font-extrabold text-red-600">65%</p>
+              <p className="mt-3 text-sm text-red-900">Tax on super payout</p>
+              <p className="mt-4 text-sm text-red-800">
+                On $4,000 balance → You keep $1,400
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 rounded-xl bg-blue-50 p-4 border border-blue-200">
+            <p className="text-sm"><strong>Why?</strong> Students have lower income and fewer tax benefits, but the rate still beats working holiday makers. Don&apos;t leave money on the table.</p>
+          </div>
         </div>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            When and how you can claim
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            You can claim once two things are true: you have left Australia, and
-            your visa has ended or been cancelled. Prepare the paperwork before
-            you fly. Chasing documents from overseas is much harder. After the claim is approved, funds usually pay out
-            within 28 days. If you are leaving permanently, your final tax return
-            can often be lodged early at the same time, so both refunds travel
-            together.
+        {/* Step 1 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">1</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                First, check the money is actually there
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            Super only exists if your employer paid it. Not every employer does—check your accounts:
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
+          <div className="mt-4 space-y-2 text-sm">
+            <div className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span><strong>Your payslips</strong> — Shows what should have been paid</span>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span><strong>Super fund accounts</strong> — Shows what actually was paid</span>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span><strong>ATO records</strong> — May be holding unclaimed money from multiple jobs</span>
+            </div>
+          </div>
+          <div className="mt-4 rounded-xl bg-orange-50 p-4 border-l-4 border-orange-500">
+            <p className="text-sm text-orange-900"><strong>⚠ Heads up:</strong> Multiple jobs = multiple super accounts. We search all of them as part of the claim.</p>
+          </div>
+        </div>
+
+        {/* Step 2 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">2</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Timing: When you can actually claim
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            Two things must be true before you can claim:
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-navy-50 p-4">
+              <p className="font-bold text-navy-800">✓ You left Australia</p>
+              <p className="mt-2 text-sm text-ink-secondary">Physically departed the country</p>
+            </div>
+            <div className="rounded-xl bg-navy-50 p-4">
+              <p className="font-bold text-navy-800">✓ Your visa ended</p>
+              <p className="mt-2 text-sm text-ink-secondary">Cancelled or expired after departure</p>
+            </div>
+          </div>
+          <div className="mt-4 rounded-xl bg-gold-50 p-4 border border-gold-200">
+            <p className="text-sm"><strong>Pro tip:</strong> Prepare all paperwork BEFORE you fly. Chasing documents from overseas is much harder.</p>
+          </div>
+        </div>
+
+        {/* Step 3 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">3</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Processing & payment
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary">
+            After your claim is approved, funds usually pay out within 28 days.
+          </p>
+          <div className="mt-4 rounded-xl bg-blue-50 p-4">
+            <p className="text-sm"><strong>📌 Bundle your exit:</strong> If you&apos;re leaving permanently, lodge your final tax return at the same time. Both refunds travel together and arrive faster.</p>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <WaCta context="I want to claim my super. I am leaving Australia." label="Claim my super on WhatsApp" />
-            <Link href="/super-form" className="text-sm font-bold text-navy-600 hover:underline">
+            <Link href="/super-form" className="inline-flex items-center justify-center rounded-2xl border-2 border-navy-600 px-6 py-3 text-sm font-bold text-navy-600 hover:bg-navy-50">
               Prefer a form? Start here
             </Link>
           </div>
         </div>
 
-        <p className="text-sm text-ink-secondary">
-          Planning your exit?{' '}
-          <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
-            Your final tax return
-          </Link>{' '}
-          and your super claim belong together. Try the{' '}
-          <Link href="/calculator" className="font-bold text-navy-600 hover:underline">
-            calculator
-          </Link>{' '}
-          to see your estimated payout.
-        </p>
+        <div className="pt-8 border-t border-navy-100">
+          <p className="text-sm text-ink-secondary">
+            <strong>Connected:</strong> Your{' '}
+            <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
+              final tax return
+            </Link>{' '}
+            and super claim work together. Try the{' '}
+            <Link href="/calculator" className="font-bold text-navy-600 hover:underline">
+              calculator
+            </Link>{' '}
+            to see your estimated payout right now.
+          </p>
+        </div>
       </section>
 
       <GuideLinks slugs={['super-refund-leaving-australia', 'how-much-tax-super-leaving-australia', 'how-to-claim-dasp', 'do-international-students-get-superannuation']} />

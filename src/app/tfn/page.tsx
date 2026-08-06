@@ -4,7 +4,6 @@ import PageHero from '@/components/PageHero'
 import ServiceSchema from '@/components/ServiceSchema'
 import Faq from '@/components/Faq'
 import GuideLinks from '@/components/GuideLinks'
-import WaCta from '@/components/WaCta'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/tfn' },
@@ -45,72 +44,133 @@ export default function TfnPage() {
         </p>
       </PageHero>
 
-      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-12">
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            Getting your TFN, step by step
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            Wait until you are physically in Australia, because the online form
-            checks that you have arrived. Then apply on the ATO website with your
-            passport and visa details. It takes about ten minutes and costs nothing.
-            The number arrives by post within 28 days, usually faster. Apply in your
-            first week, not when you find a job. The number takes time to arrive and
-            employers will ask for it on day one.
-          </p>
-          <p className="mt-3 text-ink-secondary">
-            One warning that saves students money: the TFN is free from the
-            government, always. Websites exist that look official and charge a fee
-            to submit the same free application. The only address you need is
-            ato.gov.au.
-          </p>
+      {/* Timeline */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
+        <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-cream border border-blue-200 p-6 sm:p-8">
+          <p className="text-sm font-bold text-blue-600 uppercase tracking-wide">Timeline to remember</p>
+          <p className="mt-2 font-heading text-4xl font-extrabold text-navy-800">10 minutes</p>
+          <p className="mt-1 text-sm text-ink-secondary">Application time</p>
+          <p className="mt-4 font-bold text-navy-800">+ up to 28 days for arrival</p>
+          <p className="mt-1 text-sm text-ink-secondary">Usually much faster (apply in your first week)</p>
         </div>
+      </section>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            Started working before your TFN arrived?
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            That is allowed. You have 28 days from starting a job to give your
-            employer the number. If the 28 days pass without it, your employer must
-            take tax out at the top rate, which is nearly half your pay. Do not
-            panic if that happened to you. The extra tax is not lost. It comes back
-            through your tax return, and fixing it is one of the most common things
-            we do for first year students.
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-16">
+        {/* Step 1 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">1</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Apply AFTER you arrive in Australia
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            Wait until you&apos;re physically in Australia—the online form checks that you&apos;ve arrived.
           </p>
-        </div>
-
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            When the number arrives
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            Give the TFN to your employer through the declaration form they gave
-            you on day one, and claim the tax free threshold there if it is your
-            main job. Give it to your bank too, so your interest is not taxed at
-            the top rate. Then guard it like a password: employers after you accept
-            a job, your bank, the ATO and your tax agent. Nobody else needs it, and
-            anyone else asking for it is a red flag.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <WaCta context="I need help with my TFN." label="Sort my TFN on WhatsApp" />
-            <Link href="/tfn-form" className="text-sm font-bold text-navy-600 hover:underline">
-              Prefer a form? Start here
-            </Link>
+          <div className="mt-4 rounded-xl bg-navy-50 p-4 border border-navy-200">
+            <p className="text-sm"><strong>Go to:</strong> <span className="font-mono text-blue-600">ato.gov.au</span></p>
+            <p className="mt-2 text-sm"><strong>You need:</strong> Passport + visa details</p>
+            <p className="mt-2 text-sm"><strong>Time:</strong> About 10 minutes</p>
+            <p className="mt-2 text-sm"><strong>Cost:</strong> Free (always free)</p>
+          </div>
+          <div className="mt-4 rounded-xl bg-red-50 p-4 border-l-4 border-red-500">
+            <p className="text-sm font-bold text-red-900">🚨 Scam Alert</p>
+            <p className="mt-1 text-sm text-red-800">Fake websites charge fees to submit the same free application. The ONLY official source is ato.gov.au</p>
           </div>
         </div>
 
-        <p className="text-sm text-ink-secondary">
-          Doing delivery work too? That needs an{' '}
-          <Link href="/abn" className="font-bold text-navy-600 hover:underline">
-            ABN, which is a different thing
-          </Link>
-          . And once you are earning, see{' '}
-          <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
-            how your tax return works
-          </Link>
-          .
-        </p>
+        {/* Step 2 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">2</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Wait for your number (timing is everything)
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            Your TFN arrives by post within 28 days, usually much faster.
+          </p>
+          <div className="mt-6 grid gap-4">
+            <div className="rounded-xl bg-green-50 p-4 border border-green-200">
+              <p className="font-bold text-green-900">✓ Apply in your FIRST WEEK</p>
+              <p className="mt-2 text-sm text-green-800">Number ready before your first job asks for it</p>
+            </div>
+            <div className="rounded-xl bg-red-50 p-4 border border-red-200">
+              <p className="font-bold text-red-900">✗ Apply when you find a job</p>
+              <p className="mt-2 text-sm text-red-800">Risk: Employer must take tax at top rate (≈50%) until it arrives</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Step 3 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">3</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Give it to your employer + claim the threshold correctly
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary">
+            You have 28 days from starting a job to give your TFN. Important: claim the tax free threshold with only ONE employer (pick the one that pays you most).
+          </p>
+          <div className="mt-4 rounded-xl bg-blue-50 p-4">
+            <p className="text-sm"><strong>Your TFN is for life.</strong> One number covers every job you ever have in Australia.</p>
+          </div>
+        </div>
+
+        {/* What if late */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            Started work before your TFN arrived?
+          </h2>
+          <p className="mt-4 text-ink-secondary">
+            Allowed. You have 28 days from starting a job to provide it. If you miss that window, your employer must take tax at the top rate (≈50% of pay). Don&apos;t panic—this tax is not lost.
+          </p>
+          <div className="mt-6 rounded-xl bg-gold-50 p-6 border border-gold-200">
+            <p className="font-bold text-navy-800">The fix:</p>
+            <p className="mt-2 text-sm text-ink-secondary">When you lodge your tax return, the overpaid tax comes back automatically. Fixing this is one of the most common things we do for first-year students.</p>
+          </div>
+        </div>
+
+        {/* Lost TFN */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            Lost your TFN letter?
+          </h2>
+          <p className="mt-4 text-ink-secondary">
+            The number is yours for life—the letter is just a record. You can recover it:
+          </p>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span>Through myGov linked to the ATO</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span>By calling the ATO with ID documents</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span>Through a tax agent handling your return</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="pt-8 border-t border-navy-100">
+          <p className="text-sm text-ink-secondary">
+            <strong>Next step:</strong> Got your TFN? Interested in{' '}
+            <Link href="/abn" className="font-bold text-navy-600 hover:underline">
+              delivery work (ABN)
+            </Link>
+            ? Check if you need one first.
+          </p>
+        </div>
       </section>
 
       <GuideLinks slugs={['how-to-get-tfn-international-student', 'work-before-tfn-arrives', 'tfn-or-abn-which-one']} />

@@ -45,7 +45,7 @@ export default function Nav() {
             href={waLink('I have a question about my tax.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-pop rounded-lg bg-gold-400 px-4 py-2 text-[15px] font-bold text-navy-900 hover:bg-gold-500"
+            className="btn-pop rounded-2xl bg-gold-400 px-4 py-2 text-[15px] font-bold text-navy-900 hover:bg-gold-500"
           >
             Chat on WhatsApp
           </a>
@@ -83,7 +83,7 @@ export default function Nav() {
             href={waLink('I have a question about my tax.')}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 block rounded-lg bg-gold-400 px-4 py-3 text-center font-bold text-navy-900"
+            className="mt-4 block rounded-2xl bg-gold-400 px-4 py-3 text-center font-bold text-navy-900"
           >
             Chat on WhatsApp
           </a>

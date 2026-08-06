@@ -54,7 +54,7 @@ export default function CalcWidget() {
           role="tab"
           aria-selected={tab === 'refund'}
           onClick={() => setTab('refund')}
-          className={`flex-1 rounded-lg py-3 text-sm font-bold ${
+          className={`flex-1 rounded-xl py-3 text-sm font-bold ${
             tab === 'refund' ? 'bg-white text-navy-800 shadow-sm' : 'text-ink-secondary'
           }`}
         >
@@ -64,7 +64,7 @@ export default function CalcWidget() {
           role="tab"
           aria-selected={tab === 'super'}
           onClick={() => setTab('super')}
-          className={`flex-1 rounded-lg py-3 text-sm font-bold ${
+          className={`flex-1 rounded-xl py-3 text-sm font-bold ${
             tab === 'super' ? 'bg-white text-navy-800 shadow-sm' : 'text-ink-secondary'
           }`}
         >
@@ -129,7 +129,7 @@ export default function CalcWidget() {
                 )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pop mt-5 inline-block rounded-lg bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500"
+                className="btn-pop mt-5 inline-block rounded-2xl bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500"
               >
                 Get the exact number on WhatsApp
               </a>
@@ -166,7 +166,7 @@ export default function CalcWidget() {
                 href={waLink(`I used the super calculator. My estimated payout was ${fmt(daspPayout)}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-pop mt-5 inline-block rounded-lg bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500"
+                className="btn-pop mt-5 inline-block rounded-2xl bg-gold-400 px-6 py-3 font-bold text-navy-900 hover:bg-gold-500"
               >
                 Claim my super on WhatsApp
               </a>

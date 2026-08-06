@@ -46,95 +46,166 @@ export default function TaxReturnPage() {
         </p>
       </PageHero>
 
-      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-12">
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            Why students get money back
-          </h2>
-          <p className="mt-3 text-ink-secondary">
+      {/* Key Stat */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
+        <div className="rounded-2xl bg-gradient-to-br from-gold-50 to-cream border border-gold-200 p-6 sm:p-8">
+          <p className="text-sm font-bold text-gold-600 uppercase tracking-wide">The threshold that matters</p>
+          <p className="mt-2 font-heading text-4xl font-extrabold text-navy-800">$18,200</p>
+          <p className="mt-2 text-ink-secondary">Most international students pay no tax on the first $18,200 they earn each year.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-16">
+        {/* Section 1 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">1</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Why students get money back
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
             Employers take tax out of every payslip as if you will earn the same
             amount all year. Students rarely do. You work part time in the semester,
-            more in the holidays, and maybe not at all around exams. When the tax
-            year ends on 30 June, your return compares what was taken out with what
-            you actually owed. For most working students the answer is simple: too
-            much was taken, and the difference is refunded to your bank account.
+            more in the holidays, and maybe not at all around exams.
           </p>
+          <div className="mt-4 rounded-xl bg-navy-50 p-4 border-l-4 border-gold-400">
+            <p className="text-sm font-bold text-navy-800">The math is simple:</p>
+            <p className="mt-2 text-sm text-ink-secondary">Too much tax taken out → Your return brings it back to your bank account</p>
+          </div>
         </div>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            Are you a resident for tax purposes?
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            This is the question that decides everything, and it has nothing to do
-            with citizenship or permanent residency. If you are enrolled in a course
-            that runs longer than 6 months, the ATO usually treats you as an
-            Australian resident for tax purposes. That gives you the $18,200 tax free
-            threshold and the lower resident tax rates. Students on short courses
-            under 6 months are usually not residents, and different rates apply, so
-            it is worth checking your situation before you lodge.
+        {/* Section 2 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">2</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Are you a resident for tax purposes?
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            This is the question that decides everything. If you&apos;re enrolled in a course
+            that runs longer than 6 months, the ATO treats you as an Australian resident.
           </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-green-50 p-4 border border-green-200">
+              <p className="text-sm font-bold text-green-900">✓ Resident (6+ months)</p>
+              <p className="mt-2 text-sm text-green-800">$18,200 threshold + lower tax rates</p>
+            </div>
+            <div className="rounded-xl bg-orange-50 p-4 border border-orange-200">
+              <p className="text-sm font-bold text-orange-900">⚠ Non-resident (under 6 months)</p>
+              <p className="mt-2 text-sm text-orange-800">Different rates apply—worth checking</p>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            Arrived or leaving part way through the year?
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            The tax year runs from 1 July to 30 June. If you arrived part way
-            through, your tax free threshold is adjusted for the months you were
-            here, and your return needs to say so. The same applies in your final
-            year when you leave. These part year returns are where students most
-            often pay too much or claim too little, and they are exactly the returns
-            we check most carefully.
+        {/* Section 3 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">3</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Arrived or leaving part way through the year?
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            The tax year runs 1 July to 30 June. If you arrived or left part way through, your threshold is adjusted proportionally.
           </p>
+          <div className="mt-4 rounded-xl bg-red-50 p-4 border-l-4 border-red-500">
+            <p className="text-sm font-bold text-red-900">⚠️ Most common mistake:</p>
+            <p className="mt-1 text-sm text-red-800">Part-year returns are where students most often pay too much or claim too little.</p>
+          </div>
         </div>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            Two jobs? Scholarship? Delivery work?
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            All of it comes together in one return. If you had several employers,
-            the return adds everything up and fixes any over withholding from second
-            jobs. Most full time student scholarships are tax free and stay out of
-            the numbers. Money from delivery apps on an ABN goes in as business
-            income, and expenses like your bike or phone can reduce the tax on it.
-            One return, everything reconciled.
+        {/* Section 4 */}
+        <div className="pb-12 border-b border-navy-100">
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">4</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                Multiple income sources? No problem.
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            All income comes together in one return.
           </p>
+          <div className="mt-4 space-y-2 text-sm">
+            <div className="flex gap-3">
+              <span className="text-gold-400">✓</span>
+              <span className="text-ink-secondary"><strong>Multiple jobs:</strong> Return fixes over-withholding from second jobs</span>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-gold-400">✓</span>
+              <span className="text-ink-secondary"><strong>Scholarships:</strong> Usually tax free, stay out of calculations</span>
+            </div>
+            <div className="flex gap-3">
+              <span className="text-gold-400">✓</span>
+              <span className="text-ink-secondary"><strong>Delivery work (ABN):</strong> Business income with deductible expenses (bike, phone, etc.)</span>
+            </div>
+          </div>
         </div>
 
+        {/* Section 5 - CTA */}
         <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            What you need to get started
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            Your TFN, your visa dates, and your bank details. Income statements come
-            to us through the tax system once your employer finalises them in July.
-            If you have payslips, receipts for work expenses, or your OSHC details
-            for the Medicare levy exemption, they help us find more for you. The
-            deadline for lodging on your own is 31 October. Lodging through a
-            registered tax agent usually gives you longer.
+          <div className="flex gap-4 mb-4">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-800 text-white font-bold text-lg">5</div>
+            <div>
+              <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+                What you need to get started
+              </h2>
+            </div>
+          </div>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            Have these ready:
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
+          <ul className="mt-4 space-y-2 text-sm">
+            <li className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span><strong>TFN</strong> — Your tax file number</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span><strong>Visa dates</strong> — Arrival and departure</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span><strong>Bank details</strong> — For your refund</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-navy-800 font-bold">•</span>
+              <span><strong>Optional but helpful:</strong> Payslips, work expenses, OSHC details</span>
+            </li>
+          </ul>
+          <div className="mt-6 rounded-xl bg-blue-50 p-4 border border-blue-200">
+            <p className="text-sm text-blue-900"><strong>Important dates:</strong> Self-lodge by 31 October. Through a tax agent, you usually get longer.</p>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <WaCta context={`I want help with my ${TAX_YEAR} tax return.`} label="Start my tax return on WhatsApp" />
-            <Link href="/tax-form" className="text-sm font-bold text-navy-600 hover:underline">
+            <Link href="/tax-form" className="inline-flex items-center justify-center rounded-2xl border-2 border-navy-600 px-6 py-3 text-sm font-bold text-navy-600 hover:bg-navy-50">
               Prefer a form? Start here
             </Link>
           </div>
         </div>
 
-        <p className="text-sm text-ink-secondary">
-          Related reading:{' '}
-          <Link href="/medicare" className="font-bold text-navy-600 hover:underline">
-            the Medicare levy exemption
-          </Link>{' '}
-          most students can claim, and{' '}
-          <Link href="/superannuation" className="font-bold text-navy-600 hover:underline">
-            getting your super back
-          </Link>{' '}
-          when you leave.
-        </p>
+        <div className="pt-8 border-t border-navy-100">
+          <p className="text-sm text-ink-secondary">
+            <strong>Related:</strong>{' '}
+            <Link href="/medicare" className="font-bold text-navy-600 hover:underline">
+              Medicare levy exemption
+            </Link>{' '}
+            (worth ~$600/year) and{' '}
+            <Link href="/superannuation" className="font-bold text-navy-600 hover:underline">
+              getting your super back
+            </Link>{' '}
+            when you leave.
+          </p>
+        </div>
       </section>
 
       <GuideLinks slugs={['do-international-students-pay-tax-in-australia', 'tax-refund-international-students', 'lodge-tax-return-under-18200', 'when-is-the-tax-deadline-australia', 'what-can-international-students-claim-on-tax']} />

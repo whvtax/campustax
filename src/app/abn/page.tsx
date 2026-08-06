@@ -45,81 +45,144 @@ export default function AbnPage() {
         </p>
       </PageHero>
 
-      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-12">
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
+      {/* The Danger */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
+        <div className="rounded-2xl bg-gradient-to-br from-red-50 to-cream border border-red-200 p-6 sm:p-8">
+          <p className="text-sm font-bold text-red-600 uppercase tracking-wide">The trap that catches riders</p>
+          <p className="mt-2 font-heading text-3xl font-extrabold text-navy-800">Nobody takes tax out</p>
+          <p className="mt-2 text-sm text-ink-secondary">The platform pays you gross. The tax bill arrives at tax time, not weekly.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-16">
+        {/* Step 1 */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
             When you actually need an ABN
           </h2>
-          <p className="mt-3 text-ink-secondary">
-            You need an ABN when you work for yourself: food delivery, freelance
-            design, tutoring you arrange on your own. You do not need one as an
-            employee with shifts and a boss. And a boss who tells you to get an ABN
-            for what is clearly a normal job is usually trying to dodge paying your
-            super and entitlements. That arrangement hurts you, and it is worth
-            walking away from.
-          </p>
-          <p className="mt-3 text-ink-secondary">
-            The ABN itself is free from the Australian Business Register and takes
-            minutes once you have a TFN. Like the TFN, paid middleman websites add
-            nothing except their fee.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            The trap: gross pay feels like net pay
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            In a wage job, tax comes out before money reaches you. On an ABN the
-            platform pays you everything, and it feels like a raise. It is not. The
-            tax on that income still exists, it just has no one collecting it
-            during the year, and it lands as one bill with your tax return.
-          </p>
-          <p className="mt-3 text-ink-secondary">
-            The habit that saves riders: every time a payout lands, move a slice
-            into a separate account and treat it as not yours. Around 20 cents per
-            dollar is a sensible cushion for a student who also has a wage job.
-            Riders who do this find tax season boring, which is exactly the goal.
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-green-50 p-4 border border-green-200">
+              <p className="font-bold text-green-900">✓ You need ABN for:</p>
+              <ul className="mt-3 space-y-2 text-sm text-green-800">
+                <li>• Delivery (Uber Eats, DoorDash)</li>
+                <li>• Freelance work you arrange</li>
+                <li>• Any self-employed income</li>
+              </ul>
+            </div>
+            <div className="rounded-xl bg-red-50 p-4 border border-red-200">
+              <p className="font-bold text-red-900">✗ You do NOT need ABN:</p>
+              <ul className="mt-3 space-y-2 text-sm text-red-800">
+                <li>• Regular job with shifts</li>
+                <li>• Boss on payroll</li>
+                <li>• Super + entitlements provided</li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-6 rounded-xl bg-orange-50 p-4 border-l-4 border-orange-500">
+            <p className="text-sm font-bold text-orange-900">⚠️ Red flag:</p>
+            <p className="mt-1 text-sm text-orange-800">If a boss tells you to get an ABN for what&apos;s clearly a regular job, they&apos;re dodging super. Walk away.</p>
+          </div>
+          <p className="mt-6 text-sm text-ink-secondary">
+            The ABN is <strong>free</strong> from the Australian Business Register (takes minutes once you have a TFN). Paid middleman websites add only their fee.
           </p>
         </div>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            What you can claim against delivery income
+        {/* The Calculation */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            The math: Gross vs Net
           </h2>
-          <p className="mt-3 text-ink-secondary">
-            Business income comes with business expenses. The work share of your
-            costs reduces the taxable amount: your bike or scooter and its repairs,
-            helmet and safety gear, insulated bags, and the delivery share of your
-            phone plan. Keep receipts as you go, photos in a folder on your phone
-            are enough.
+          <p className="mt-4 text-ink-secondary mb-6">
+            In a wage job, tax comes out before you see it. On ABN, the platform pays you everything—which feels like a raise, but isn&apos;t.
           </p>
-          <p className="mt-3 text-ink-secondary">
-            GST is a separate question with a simple student answer: food delivery
-            does not require GST registration until $75,000 of turnover, so almost
-            no student rider registers. Driving passengers is different, GST
-            applies from the first dollar, which is one reason delivery stays
-            simpler.
-          </p>
-          <div className="mt-6 flex flex-wrap items-center gap-4">
-            <WaCta context="I do delivery work and need help with my ABN." label="Set up my ABN on WhatsApp" />
-            <Link href="/abn-form" className="text-sm font-bold text-navy-600 hover:underline">
-              Prefer a form? Start here
-            </Link>
+
+          <div className="rounded-2xl bg-navy-50 p-6 sm:p-8 border border-navy-200">
+            <p className="text-sm font-bold text-navy-800 uppercase">Example: $1,000 delivery earnings</p>
+            <div className="mt-6 space-y-3">
+              <div className="flex justify-between items-center pb-3 border-b border-navy-200">
+                <span className="text-sm text-ink-secondary">Gross from platform:</span>
+                <span className="font-bold text-lg text-navy-800">$1,000</span>
+              </div>
+              <div className="flex justify-between items-center pb-3 border-b border-navy-200">
+                <span className="text-sm text-ink-secondary">Put aside 20% now (tax estimate):</span>
+                <span className="font-bold text-lg text-red-600">-$200</span>
+              </div>
+              <div className="flex justify-between items-center py-3 rounded-lg bg-gold-100 px-3">
+                <span className="text-sm font-bold text-navy-800">Available to spend:</span>
+                <span className="font-bold text-lg text-navy-800">$800</span>
+              </div>
+            </div>
+            <p className="mt-4 text-xs text-ink-secondary">At tax time: Whatever you didn&apos;t use from the $200 is a bonus.</p>
+          </div>
+
+          <div className="mt-6 rounded-xl bg-blue-50 p-4">
+            <p className="text-sm"><strong>The habit that works:</strong> Every payout lands, move ~20% into a separate account and forget it. Tax season = boring (exactly the goal).</p>
           </div>
         </div>
 
-        <p className="text-sm text-ink-secondary">
-          No TFN yet? Do{' '}
-          <Link href="/tfn" className="font-bold text-navy-600 hover:underline">
-            that first, it is free
-          </Link>
-          . And at year end, delivery income and wages meet in{' '}
-          <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
-            one tax return
-          </Link>
-          .
-        </p>
+        {/* Step 3 */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            What you can claim to reduce tax
+          </h2>
+          <p className="mt-4 text-ink-secondary mb-4">
+            Business expenses reduce your taxable income.
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-navy-50 p-4">
+              <p className="font-bold text-navy-800">Claimable:</p>
+              <ul className="mt-3 space-y-2 text-sm text-ink-secondary">
+                <li>✓ Bike/scooter + repairs</li>
+                <li>✓ Helmet, safety gear</li>
+                <li>✓ Insulated bags</li>
+                <li>✓ Phone plan (delivery share)</li>
+                <li>✓ Wear & tear</li>
+              </ul>
+            </div>
+            <div className="rounded-xl bg-navy-50 p-4">
+              <p className="font-bold text-navy-800">Pro tip:</p>
+              <p className="mt-2 text-sm text-ink-secondary">Keep receipts as you go. Phone photos in a folder work fine.</p>
+              <p className="mt-3 text-sm text-navy-800"><strong>Adds up quickly.</strong> $500 in expenses = ~$100 tax saved.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* GST */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            GST: The simple answer
+          </h2>
+          <div className="rounded-xl bg-green-50 p-4 border border-green-200">
+            <p className="text-sm"><strong>Food delivery:</strong> No GST until $75,000 turnover (almost no students hit this)</p>
+            <p className="mt-2 text-sm text-ink-secondary">Keep it simple, no registration needed</p>
+          </div>
+          <div className="mt-4 rounded-xl bg-orange-50 p-4 border border-orange-200">
+            <p className="text-sm"><strong>Passenger rideshare:</strong> GST from dollar one (much more complex)</p>
+            <p className="mt-2 text-sm text-ink-secondary">Stick with delivery—simpler tax</p>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div>
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <WaCta context="I do delivery work and need help with my ABN." label="Set up my ABN on WhatsApp" />
+            <Link href="/abn-form" className="inline-flex items-center justify-center rounded-2xl border-2 border-navy-600 px-6 py-3 text-sm font-bold text-navy-600 hover:bg-navy-50">
+              Prefer a form? Start here
+            </Link>
+          </div>
+
+          <p className="text-sm text-ink-secondary">
+            <strong>Prerequisites:</strong> Get a{' '}
+            <Link href="/tfn" className="font-bold text-navy-600 hover:underline">
+              TFN first
+            </Link>
+            . At year end, delivery income and wage job income meet in{' '}
+            <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
+              one tax return
+            </Link>
+            .
+          </p>
+        </div>
       </section>
 
       <GuideLinks slugs={['abn-for-delivery-riders-students', 'tax-on-abn-income-students', 'tfn-or-abn-which-one', 'how-many-hours-can-international-students-work']} />

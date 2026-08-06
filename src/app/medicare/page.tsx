@@ -50,58 +50,108 @@ export default function MedicarePage() {
         </p>
       </PageHero>
 
-      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-12">
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            What the exemption is worth
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            Two percent sounds small until you put numbers on it. A student who
-            earned $30,000 in the tax year would pay a $600 levy. Claim the
-            exemption and that $600 stays in the refund. Over a three year degree
-            with part time work, the exemption is easily worth over a thousand
-            dollars. It is the single most missed item on student tax returns.
+      {/* Savings Stat */}
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-8">
+        <div className="rounded-2xl bg-gradient-to-br from-green-50 to-cream border border-green-200 p-6 sm:p-8">
+          <p className="text-sm font-bold text-green-600 uppercase tracking-wide">What students miss</p>
+          <p className="mt-2 font-heading text-4xl font-extrabold text-navy-800">$600</p>
+          <p className="mt-1 text-sm text-ink-secondary">Typical annual savings (on $30,000 income)</p>
+          <p className="mt-4 text-sm text-ink-secondary">
+            Over a 3-year degree = $1,800+ gone if you miss this.
           </p>
         </div>
+      </section>
 
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            The document that unlocks it
+      <section className="mx-auto max-w-3xl px-4 sm:px-6 py-14 space-y-16">
+        {/* Why It Matters */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            Why the 2% matters
           </h2>
-          <p className="mt-3 text-ink-secondary">
-            The exemption needs proof, and the proof is called a Medicare
-            Entitlement Statement. You apply for it from Services Australia, not
-            the ATO, with your passport and visa details. It confirms you were not
-            entitled to Medicare for the year. Processing takes several weeks, so
-            the right time to apply is before tax season, in May or June. With the
-            statement in hand, the exemption goes into your return and the levy
-            comes off your bill.
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            The Medicare levy funds Australian public healthcare. You don&apos;t get that—your visa requires OSHC insurance instead.
           </p>
-        </div>
-
-        <div>
-          <h2 className="font-heading text-2xl font-extrabold text-navy-800">
-            Already lodged past returns without it?
-          </h2>
-          <p className="mt-3 text-ink-secondary">
-            This happens all the time, especially to students who lodged on their
-            own in first year. The good news: past returns can be amended. One
-            statement can cover several years, the amendments go in, and the levy
-            you paid comes back. Bring your old notices of assessment and we can
-            check quickly whether there is money sitting there.
-          </p>
-          <div className="mt-6">
-            <WaCta context="I want to claim the Medicare levy exemption." label="Claim my exemption on WhatsApp" />
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-xl bg-red-50 p-4 border border-red-200">
+              <p className="text-sm font-bold text-red-900">Without exemption</p>
+              <p className="mt-2 text-sm text-red-800">Pay 2% Medicare levy you don&apos;t use</p>
+              <p className="mt-3 font-bold text-red-900">$30,000 income → $600 gone</p>
+            </div>
+            <div className="rounded-xl bg-green-50 p-4 border border-green-200">
+              <p className="text-sm font-bold text-green-900">With exemption (you claim)</p>
+              <p className="mt-2 text-sm text-green-800">Skip the levy, keep the money</p>
+              <p className="mt-3 font-bold text-green-900">$30,000 income → $600 stays</p>
+            </div>
           </div>
         </div>
 
-        <p className="text-sm text-ink-secondary">
-          The exemption is claimed inside{' '}
-          <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
-            your tax return
-          </Link>
-          , so the two usually happen together.
-        </p>
+        {/* The Document */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            The document that unlocks it
+          </h2>
+          <p className="mt-4 text-ink-secondary max-w-2xl">
+            The exemption needs proof: a <strong>Medicare Entitlement Statement</strong>
+          </p>
+          <div className="mt-6 rounded-xl bg-navy-50 p-6 border border-navy-200">
+            <p className="font-bold text-navy-800">Where to get it:</p>
+            <p className="mt-2 text-sm text-ink-secondary">Services Australia (NOT the ATO)</p>
+            <p className="mt-3 text-sm text-ink-secondary">You need: Passport + visa details</p>
+            <p className="mt-3 text-sm text-ink-secondary">Processing: Several weeks</p>
+            <p className="mt-4 text-sm font-bold text-gold-600">⏰ Best time: May or June (before July tax rush)</p>
+          </div>
+          <div className="mt-4 rounded-xl bg-blue-50 p-4 border border-blue-200">
+            <p className="text-sm"><strong>What it does:</strong> Confirms you weren&apos;t entitled to Medicare for the year. With it in hand, your exemption goes into your tax return and the levy disappears.</p>
+          </div>
+        </div>
+
+        {/* Special Cases */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            Special case: Reciprocal healthcare countries
+          </h2>
+          <p className="mt-4 text-ink-secondary">
+            Students from certain countries may be entitled to Medicare (UK, NZ, Ireland, Sweden). If that&apos;s you, you generally can&apos;t claim the exemption. We check this automatically.
+          </p>
+        </div>
+
+        {/* Past Years */}
+        <div className="pb-12 border-b border-navy-100">
+          <h2 className="font-heading text-2xl font-extrabold text-navy-800 mb-6">
+            Already lodged without the exemption?
+          </h2>
+          <p className="mt-4 text-ink-secondary">
+            This is incredibly common, especially if you lodged your own first-year return. Good news: it&apos;s fixable.
+          </p>
+          <div className="mt-6 rounded-xl bg-gold-50 p-6 border border-gold-200">
+            <p className="text-sm font-bold text-navy-800">How amendments work:</p>
+            <ul className="mt-3 space-y-2 text-sm text-ink-secondary">
+              <li>• One Medicare Entitlement Statement can cover multiple years</li>
+              <li>• Past returns get amended, levy refunded</li>
+              <li>• Bring your old Notices of Assessment—we can check quickly what&apos;s owed</li>
+            </ul>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <WaCta context="I want to claim the Medicare levy exemption." label="Start on WhatsApp" />
+            <Link href="/tax-return" className="inline-flex items-center justify-center rounded-2xl border-2 border-navy-600 px-6 py-3 text-sm font-bold text-navy-600 hover:bg-navy-50">
+              Check my tax return
+            </Link>
+          </div>
+        </div>
+
+        <div className="pt-8 border-t border-navy-100">
+          <p className="text-sm text-ink-secondary">
+            <strong>Connected:</strong> The exemption is claimed inside your{' '}
+            <Link href="/tax-return" className="font-bold text-navy-600 hover:underline">
+              tax return
+            </Link>
+            , so they usually happen together. Also check if you qualify for the{' '}
+            <Link href="/guides" className="font-bold text-navy-600 hover:underline">
+              other hidden refunds
+            </Link>
+            .
+          </p>
+        </div>
       </section>
 
       <GuideLinks slugs={['medicare-levy-exemption-international-students', 'is-oshc-tax-deductible', 'tax-refund-international-students']} />
