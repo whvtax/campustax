@@ -6,7 +6,7 @@ export default function WaCta({ context, label }: { context: string; label: stri
       href={waLink(context)}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn-pop inline-block rounded-lg bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
+      className="btn-pop inline-block rounded-2xl bg-gold-400 px-6 py-3.5 font-bold text-navy-900 hover:bg-gold-500"
     >
       {label}
     </a>
