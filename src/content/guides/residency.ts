@@ -1,7 +1,5 @@
 import type { Guide } from '../types'
-
 const UPDATED = '30 July 2026'
-
 export const residencyGuides: Guide[] = [
   {
     slug: 'do-international-students-pay-tax-in-australia',
@@ -63,7 +61,6 @@ export const residencyGuides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I read the guide about students paying tax. I have a question.',
   },
-
   {
     slug: 'tax-residency-international-students',
     title: 'Are international students Australian residents for tax purposes?',
@@ -124,7 +121,6 @@ export const residencyGuides: Guide[] = [
     serviceLink: { href: '/tax-return', label: 'How our tax return service works' },
     waContext: 'I have a question about my tax residency.',
   },
-
   {
     slug: 'tax-free-threshold-international-students',
     title: 'Do international students get the $18,200 tax free threshold?',
@@ -182,10 +178,8 @@ export const residencyGuides: Guide[] = [
       },
     ],
     related: ['do-international-students-pay-tax-in-australia', 'how-much-tax-do-international-students-pay', 'tax-refund-international-students'],
-    serviceLink: { href: '/calculator', label: 'Estimate your refund with the calculator' },
     waContext: 'I have a question about the tax free threshold.',
   },
-
   {
     slug: 'how-much-tax-do-international-students-pay',
     title: 'How much tax do international students pay in Australia?',
@@ -243,10 +237,8 @@ export const residencyGuides: Guide[] = [
       },
     ],
     related: ['tax-free-threshold-international-students', 'tax-residency-international-students', 'tax-refund-international-students'],
-    serviceLink: { href: '/calculator', label: 'Run your numbers in the calculator' },
     waContext: 'I have a question about how much tax I should be paying.',
   },
-
   {
     slug: 'tax-refund-international-students',
     title: 'Can international students get a tax refund in Australia?',
@@ -304,7 +296,6 @@ export const residencyGuides: Guide[] = [
       },
     ],
     related: ['tax-free-threshold-international-students', 'how-much-tax-do-international-students-pay', 'do-international-students-pay-tax-in-australia'],
-    serviceLink: { href: '/calculator', label: 'Estimate your refund now' },
     waContext: 'I want to check if I have a refund waiting.',
   },
 ]

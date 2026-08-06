@@ -16,6 +16,6 @@ export type Guide = {
   shortAnswer: string // one or two sentences for the shareable box
   faq: { q: string; a: string }[]
   related: string[] // slugs
-  serviceLink: { href: string; label: string }
+  serviceLink?: { href: string; label: string }
   waContext: string
 }
